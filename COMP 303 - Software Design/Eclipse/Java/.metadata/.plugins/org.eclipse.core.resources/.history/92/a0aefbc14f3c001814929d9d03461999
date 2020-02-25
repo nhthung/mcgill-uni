@@ -1,0 +1,65 @@
+package JavaCool303;
+
+import javax.swing.JButton;
+import javax.swing.border.Border;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Cool303Button extends Cool303Component {
+	JButton button;
+	
+	Cool303Button() {
+		button = new JButton(" ");
+		
+		button.addActionListener( new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("This button empty. YEET");
+			}
+		} );
+	}
+	
+	Cool303Button(String text) {
+		button = new JButton(text);
+		
+		button.setActionCommand(text);
+		
+		button.addActionListener( new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (e.getActionCommand().equals(text))
+					System.out.println(text);
+			}
+		} );
+		
+		button.setBorder(new RoundedBorder(20));
+	}
+	
+	private static class RoundedBorder implements Border {
+
+	    private int radius;
+
+
+	    RoundedBorder(int radius) {
+	        this.radius = radius;
+	    }
+
+
+	    public Insets getBorderInsets(Component c) {
+	        return new Insets(this.radius+1, this.radius+1, this.radius+2, this.radius);
+	    }
+
+
+	    public boolean isBorderOpaque() {
+	        return true;
+	    }
+
+
+	    public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
+	        g.drawRoundRect(x, y, width-1, height-1, radius, radius);
+	    }
+	}
+	
+	void applyTheme() {}
+
+}

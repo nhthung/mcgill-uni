@@ -1,0 +1,9 @@
+import java.util.Scanner;
+public class WhoAmI{
+  public static void main(String[] args){
+    Scanner input = new Scanner(System.in);
+    String name = input.nextLine();
+    System.out.println("I'M " + name);
+    System.out.printf("%.3f is my bitch at %.9f\n", Math.PI, Math.E);
+  }
+}

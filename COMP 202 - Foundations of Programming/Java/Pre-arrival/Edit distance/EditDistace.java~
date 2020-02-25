@@ -1,0 +1,12 @@
+public class EditDistace{
+  public static int dist(String a, String b){
+    if(a.equals(b))
+      return 0;
+    else{
+      if(a.equals(""))
+        return b.length();
+      if(b.equals(""))
+        return a.length();
+    }
+  }
+}

@@ -1,0 +1,12 @@
+public class Moveable extends Item {
+    Moveable(char token, int x, int y) {
+        if ( ((int)token < 33 || (int)token > 126) || x < 0 ){}
+
+        this.token = token;
+    }
+
+    @Override
+    public void step() {
+
+    }
+}

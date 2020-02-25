@@ -1,0 +1,26 @@
+package JavaCool303;
+
+import java.awt.Color;
+import javax.swing.border.Border;
+
+public abstract class Cool303Theme {
+	int[] backgroundColor = new int[3];
+	int[] borderColor = new int[3];
+	int[] buttonColor = new int[3];
+	
+	int borderThickness, cornerRadius;
+	
+	abstract Border getBorder();
+	
+	Color getBackgroundColor() {
+		return new Color(backgroundColor[0], backgroundColor[1], backgroundColor[2]);
+	}
+	
+	Color getBorderColor() {
+		return new Color(borderColor[0], borderColor[1], borderColor[2]);
+	}
+	
+	Color getButtonColor() {
+		return new Color(buttonColor[0], buttonColor[1], buttonColor[2]);
+	}
+}

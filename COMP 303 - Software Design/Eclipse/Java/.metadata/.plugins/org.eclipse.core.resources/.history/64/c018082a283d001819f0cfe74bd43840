@@ -1,0 +1,76 @@
+package JavaCool303;
+
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.util.ArrayList;
+import javax.swing.JLabel;	
+import javax.swing.JPanel;
+import javax.swing.JComponent;
+import java.awt.Color;
+
+public class Cool303Container extends JPanel{
+	JPanel content;
+	boolean enableBgColor = false;
+	
+	private ArrayList<Component> components = new ArrayList<Component>();
+	
+	Cool303Container() {		
+		super(new FlowLayout());
+		
+		content = this;
+		
+		setPreferredSize(new Dimension(325, 300));
+	}
+	
+	Cool303Container(String title, boolean enableBgColor) {		
+		if (title != null && !title.isEmpty()) {
+			setLayout(new BorderLayout());
+			
+			content = new JPanel(new FlowLayout());
+		
+			this.add(new JLabel(title, (int)JLabel.CENTER_ALIGNMENT), BorderLayout.NORTH);
+			this.add(content, BorderLayout.CENTER);
+		}
+		else {
+			setLayout(new FlowLayout());
+			content = this;
+		}
+		
+		this.enableBgColor = enableBgColor;
+		
+		setPreferredSize(new Dimension(325, 300));
+	}
+	
+	void add(JComponent c) {
+		components.add(c);
+		content.add(c);
+	}
+	
+	public void remove(int i) {
+		content.remove(components.get(i));
+		
+		components.remove(i);
+	}
+	
+	public void removeAll() {
+		content.removeAll();
+		
+		components.clear();
+	}
+	
+	void applyTheme(Cool303Theme theme) {
+		if (enableBgColor) {
+			this.setBackground(theme.getBackgroundColor());
+			content.setBackground(theme.getBackgroundColor());
+		}
+		
+		
+		
+		for (Component c: components) {
+			if (c instanceof Cool303Button)
+				((Cool303Button)c).applyTheme(theme);
+		}
+	}	
+}

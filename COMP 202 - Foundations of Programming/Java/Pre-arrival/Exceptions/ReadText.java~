@@ -1,0 +1,11 @@
+import java.util.*, java.io.*;
+
+public class ReadText{
+  public static void main(String[] args){
+    try {
+      Scanner sc = new Scanner(new File("test.txt"));
+    }
+    catch (FileNotFoundException fnfe) {
+      System.err.println("test.txt cannot be found.");
+    }
+  }

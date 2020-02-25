@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>144</y>
+      <w>312</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+*Cool303Component*
+Package::JavaCool303
+--
+--
++setSize(width: int, height: int): void
+
++getComponent(): Component
++getWidth(): int
++getHeight(): int
+
++paint(theme: Cool303Theme): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>472</x>
+      <y>48</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>*Cool303Button*
+Package::JavaCool303
+--
+-button: JButton
+--
++Cool303Button()
++Cool303Button(text: String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>248</x>
+      <y>80</y>
+      <w>56</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>*JPanel*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>328</y>
+      <w>312</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>*Cool303Root*
+Package::JavaCool303
+--
+-desiredWidth: int
+-desiredHeight: int
+--
++Cool303Root(theme: Cool303Theme)
++Cool303Root(width: int, height: int, theme: Cool303Theme)
+
++paint();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>248</x>
+      <y>48</y>
+      <w>56</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>*JButton*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>248</x>
+      <y>552</y>
+      <w>384</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>*BubbleBorder*
+Package::JavaCool303
+--
+-color: Color
+-thickness: int
+-radii: int
+-insets: Insets
+-stroke: BasicStroke
+-strokePad: int
+--
++BubbleBorder(color: Color, thickness: int, radius: int)
+
++getBorderInsets(c: Component): Insets
++getBorderInsetse(c: Component, insets: Insets): Insets 
+
++paintBorder(c: Component, g: Graphics, x: int, y: int, width: int, height: int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>768</y>
+      <w>128</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>*Pastel*
+Package::JavaCool303
+--
+--
++Pastel()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>248</x>
+      <y>144</y>
+      <w>384</w>
+      <h>344</h>
+    </coordinates>
+    <panel_attributes>*Cool303Container*
+Package::JavaCool303
+--
+-panel: JPanel
+-content: JPanel
+-components: ArrayList&lt;Cool303Component&gt;
+-enableBgColor: boolean
+-width: int
+-height: int
+--
++Cool303Container()
++Cool303Container(title: String)
++Cool303Container(width: int, height: int)
++Cool303Container(title: String, width: int, height: int)
+
++enableBgColor(bool: boolean): void
++add(c: Cool303Component): void
++remove(index: int): void
++removeAll(): void
+
++getChildren(): ArrayList&lt;Cool303Component&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1128</x>
+      <y>552</y>
+      <w>64</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>*JFrame*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1128</x>
+      <y>328</y>
+      <w>176</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>*Cool303Frame*
+Package::JavaCool303
+--
+-frame: JFrame
+--
++Cool303Frame()
++Cool303Frame(title: String)
+
++add(root: Cool303Root): void
++remove(index: int): void
++removeAll(): void
+
++setVisible(bool: boolean): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>832</y>
+      <w>128</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>*Summer*
+Package::JavaCool303
+--
+--
++Summer()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>552</y>
+      <w>312</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>/*Cool303Theme*/
+Package::JavaCool303
+{abstract}
+--
+-backgroundColor: Color
+-borderColor: Color
+-buttonColor: Color
+-borderThickness: int
+-cornerRadius: int
+--
++Cool303Theme()
+
++setBackgroundColor(c: Color): void
++setBorderColor(c: Color): void
++setButtonColor(c: Color): void
++setBorderThickness(thickness: int): void
++setCornerRadius(radius: int): void
+
++getBorder(): Border
++getBackgroundColor(): Color
++getBorderColor(): Color
++getButtonColor(): Color</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>248</x>
+      <y>800</y>
+      <w>104</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>/*AbstrackBorder*/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>296</x>
+      <y>48</y>
+      <w>192</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>296</x>
+      <y>80</y>
+      <w>104</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>110.0;80.0;110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>152</y>
+      <w>120</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>56</y>
+      <w>72</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>70.0;130.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>344</y>
+      <w>120</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>272</y>
+      <w>176</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..m
+Only Cool303Container allowed</panel_attributes>
+    <additional_attributes>70.0;80.0;10.0;80.0;10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>176</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1152</x>
+      <y>480</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>552</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>744</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>768</y>
+      <w>120</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>768</y>
+      <w>64</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;90.0;60.0;90.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1032</x>
+      <y>328</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..k</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>480</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>208</x>
+      <y>16</y>
+      <w>888</w>
+      <h>512</h>
+    </coordinates>
+    <panel_attributes>lt=.
+fg=blue</panel_attributes>
+    <additional_attributes>460.0;10.0;10.0;10.0;10.0;620.0;1090.0;620.0;1090.0;130.0;650.0;130.0;650.0;10.0;460.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>752</x>
+      <y>24</y>
+      <w>184</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=blue
+Composite pattern:
+Calling paint() on root
+calls paint(theme) on containers
+which calls paint(theme) on buttons.</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

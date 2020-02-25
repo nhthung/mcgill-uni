@@ -1,0 +1,11 @@
+.container-form,
+.text-preview,
+.container-preview {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.container-form { top: 20rem }
+.text-preview { top: 33rem }
+.container-preview { top: 35rem }

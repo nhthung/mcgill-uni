@@ -1,0 +1,9 @@
+public class Player{
+  private double[] location;
+  private int grenadeStock;
+  private double lifeLeft;
+  
+  public newPlayer(){
+    System.out.println("You're alive");
+  }
+}

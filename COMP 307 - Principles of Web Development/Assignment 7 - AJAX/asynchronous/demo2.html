@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asynchronous Demo</title>
+
+
+
+</head>
+<body>
+
+<br><br><br><br>
+<div id="divForm1">
+    <form id="Form1" method="post" action="output1.php" onsubmit="return submitForm1(this);">
+        First Name: <input id="firstName" name="firstName" type="text" placeholder="Your First Name" required> <br><br>
+        Last Name: <input id="lastName" name="lastName" type="text" placeholder="Your Last Name" required> <br><br>
+        <button id="submit1">Submit</button>
+    </form>
+</div>
+
+<br><br><br><br>
+<div>
+    <p> Just Some Random Content That I Want To Stay Here ALWAYS !!!</p>
+</div>
+<br><br><br><br>
+
+<div id="divForm2">
+    <form id="Form2" method="post" action="output2.php" onsubmit="return submitForm2(this);">
+        Roll No: <input id="roll" name="roll" type="number" placeholder="Your Roll Number" required><br><br>
+        <button id="submit2" type="submit">Submit</button>
+    </form>
+</div>
+
+
+</body>
+
+<script>
+    // ajax for form1
+    function submitForm1(formElement) {
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            document.getElementById('divForm1').innerText = xhr.responseText;
+        } // success case
+        xhr.onerror = function () {
+            alert(xhr.responseText);
+        } // failure case
+        xhr.open(formElement.method, formElement.action, true);
+        // Add the required HTTP header for form data POST requests
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        xhr.send('firstName='+firstName+'&lastName='+lastName);
+        return false;
+    }
+
+    // ajax for form2
+    function submitForm2(formElement) {
+        var roll = document.getElementById('roll').value;
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function(){ document.getElementById('divForm2').innerText=xhr.responseText;} // success case
+        xhr.onerror = function(){ alert (xhr.responseText); } // failure case
+        xhr.open (formElement.method, formElement.action, true);
+        // Add the required HTTP header for form data POST requests
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        var roll = document.getElementById('roll').value;
+        xhr.send ('roll='+roll);
+        return false;
+    }
+
+</script>
+
+</html>

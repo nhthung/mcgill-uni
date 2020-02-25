@@ -1,0 +1,25 @@
+public class World {
+    private Item[][] world;
+
+    World(int width, int height) {
+        if (width < 1 || height < 1)
+            throw new IllegalArgumentException("Width and height must be at least 1.");
+
+        world = new Item[width][height];
+    }
+
+    public void step() {
+
+    }
+
+    public void display() {
+
+    }
+
+    public void add(Item item, int x, int y) throws IllegalAccessException {
+        if (world[x][y] != null)
+            throw new IllegalAccessException("This spot's already taken by another object!");
+
+        world[x][y] = item;
+    }
+}

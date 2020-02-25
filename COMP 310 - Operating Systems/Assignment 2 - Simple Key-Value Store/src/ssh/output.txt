@@ -1,0 +1,133 @@
+-----------One Threaded Testing Of Shared Memory Database-----------
+-----------Initializing DB-----------
+-----------Attempting Invalid Read-----------
+-----------Attempting Simple Read and Writes-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 1/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 2/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 3/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 4/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 5/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 6/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 7/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 8/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 9/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 10/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 11/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 12/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 13/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 14/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 15/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 16/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 17/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 18/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 19/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 20/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 21/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 22/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 23/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 24/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 25/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 26/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 27/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 28/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 29/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 30/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 31/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 32/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 33/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 34/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 35/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 36/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 37/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 38/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 39/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 40/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 41/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 42/256-----------
+-----------Error Count: 0-----------
+
+-----------Attempting Writes ROUND 4

@@ -1,0 +1,37 @@
+commit b3f756b27011afc2ca56c56b4639079efc9026d3 (HEAD -> master)
+Author: Mr Brownstone <le.nhthung@gmail.com>
+Date:   Fri Nov 24 01:43:05 2017 -0400
+
+    lel jk ok now it's polished
+
+
+
+commit 34d632ceb8f6aaa20ad6fd8f92f99204dafb2e1f
+Author: Mr Brownstone <le.nhthung@gmail.com>
+Date:   Fri Nov 24 01:40:56 2017 -0400
+
+    Polished.
+
+commit 2dc9e1f53c9de1b639488663ad685f120f059f1b
+Author: Mr Brownstone <le.nhthung@gmail.com>
+Date:   Fri Nov 24 01:16:05 2017 -0400
+
+    Got it working. Now, polishing
+
+commit 4709dfd01168309c488bd0faa36f148845fc74b5
+Author: Mr Brownstone <le.nhthung@gmail.com>
+Date:   Fri Nov 24 00:42:30 2017 -0400
+
+    1st try, failed, but got some meat in the program now
+
+commit 0f5de32857c7f83e1d7d258b0c8333e11cadce14
+Author: Mr Brownstone <le.nhthung@gmail.com>
+Date:   Thu Nov 23 14:21:11 2017 -0400
+
+    Figured out #ifndef (#endif was missing)
+
+commit 6f212d815e43f362f559a13f68cf088987902d72
+Author: Mr Brownstone <le.nhthung@gmail.com>
+Date:   Wed Nov 22 23:44:48 2017 -0400
+
+    Barebone

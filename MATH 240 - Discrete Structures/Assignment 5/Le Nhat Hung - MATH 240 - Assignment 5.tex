@@ -1,0 +1,255 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{fullpage}
+
+\newlist{myEnumerate}{enumerate}{9}
+\setlist[myEnumerate,1]{label=\arabic*.}
+\setlist[myEnumerate,2]{label=(\alph*)}
+\setlist[myEnumerate,3]{label=\roman*.}
+
+
+\begin{document}
+
+\noindent
+\large\textbf{Assignment 5} \hfill \textbf{LE, Nhat Hung} \\
+\normalsize MATH 240 \hfill \today
+
+\begin{myEnumerate}
+	\item
+	\begin{myEnumerate}
+    	\item
+        \( \\
+        \begin{array}{llll}
+        	243 & = 235 & + & 8 \\
+            235 & = 29 \cdot 8 & + & 3 \\
+            8 & = 2 \cdot 3 & + & 2 \\
+            3 & = 2 & + & 1
+        \end{array} \\ \)
+        
+        $gcd(235, 243)=1$
+        
+        \( \\
+        \begin{array}{ll}
+            3 = 2 + 1 & \Rightarrow 3 - 2 = 1 \\
+            		  & \Rightarrow 235 - 29 \cdot 8 - (8 - 2 \cdot 3) = 1 \\
+                      & \Rightarrow 235 - 30 \cdot 8 + 2 \cdot 3 = 1 \\
+                      & \Rightarrow 235 - 30(243 - 235) + 2(235 - 29 \cdot 8) = 1 \\
+                      & \Rightarrow 33 \cdot 235 - 30 \cdot 243 - 58 \cdot 8 = 1 \\
+                      & \Rightarrow 33 \cdot 235 - 30 \cdot 243 - 58(243 - 235) = 1 \\
+                      & \Rightarrow 91 \cdot 235 - 88 \cdot 243 = 1 \\
+                      & \Rightarrow 235^{-1} = 91 $ $ ($mod $ 243)
+        \end{array} \\ \)
+        
+        \( \\
+        \begin{array}{ll}
+        	235x \equiv 12 $ $ ($mod $ 243) & \Rightarrow x \equiv 12 \cdot 91 $ $ ($mod $ 243) \\
+            								& \Rightarrow x \equiv 1092 \equiv 120 $ $ ($mod $ 243) \\
+                                            & \Rightarrow x = 120
+        \end{array} \)
+        
+        \item
+        $235 = 5 \cdot 47$ \\
+        $245 = 5 \cdot 7^{2}$ \\
+        $gcd(234, 245) = 5$ \\
+        
+        Suppose $235x \equiv 12 $ $ ($mod $ 245)$ has a solution.
+        
+        \( \\
+        \begin{array}{ll}
+        	235x \equiv 12 $ $ ($mod $ 245) & \Rightarrow 235x = 245q + 12, $ $q \in \mathbb{Z} \\
+            								& \Rightarrow 235x - 245q = 12 \\
+                                            & \Rightarrow gcd(235, 245) \mid 12 \\
+                                            & \Rightarrow 5 \mid 12
+        \end{array} \\ \)
+        
+        But $5 \nmid 12$. \\
+        Thus, $235x \equiv 12 $ $ ($mod $ 245)$ has no solutions. \\
+        
+        \item
+        $235x \equiv 10 $ $ ($mod $ 245) \Leftrightarrow 47x \equiv 2 $ $ ($mod $ 49)$ \\
+        
+        \(
+        \begin{array}{llll}
+        	49 & = 47 & + & 2 \\
+            47 & = 23 \cdot 2 & + & 1
+        \end{array} \\ \)
+        
+        $gcd(47, 49) = 1$ \\
+        
+        \(
+        \begin{array}{ll}
+        	47 = 23 \cdot 2 + 1 & \Rightarrow 47 - 23 \cdot 2 = 1 \\
+            					& \Rightarrow 47 - 23(49 - 47) = 1 \\
+                                & \Rightarrow 24 \cdot 47 - 23 \cdot 49 = 1 \\
+                                & \Rightarrow 47^{-1} = 24 $ $ ($mod $ 49)
+        \end{array} \\ \)
+        
+        \( \\
+        \begin{array}{ll}
+        	235x \equiv 10 $ $ ($mod $ 245) & \Rightarrow 47x \equiv 2 $ $ ($mod $ 49) \\
+            								& \Rightarrow x \equiv 2 \cdot 24 $ $ ($mod $ 49) \\
+                                            & \Rightarrow x \equiv 48 $ $ ($mod $ 49) \\
+                                            & \Rightarrow x = 48 + 49k, $ $ k \in \mathbb{Z} $ and $ 0 \leq x < 245 \\
+                                            & \Rightarrow x = 48, 97, 146, 195 $ or $ 244
+        \end{array} \\ \)
+        
+    \end{myEnumerate}
+	
+    \item
+    Let $d_{0},...,d_{k - 1}$ digits of $n \in \mathbb{Z}$. \\
+    
+    \centerline{$n = \overline{d_{k - 1}d_{k - 2}...d_{1}d_{0}}$}
+    
+    \( \\
+    \begin{array}{ll}
+     	n \equiv \overline{d_{k - 1}d_{k - 2}...d_{1}d_{0}} $ $ ($mod $ 11) & \Rightarrow n \equiv 10^{k - 1}d_{k - 1} + 10^{k - 2}d_{k - 2} + ... + 10d_{1} + d_{0} $ $ ($mod $ 11) \\
+																			& \Rightarrow n \equiv (-1)^{k - 1}d_{k - 1} + (-1)^{k - 2}d_{k - 2} + ... + (-1)d_{1} + d_{0} $ $ ($mod $ 11) \\
+																			& \Rightarrow n \equiv d_{k - 1} + (-d_{k - 2}) + ... + (-d_{1}) + d_{0} $ $ ($mod $ 11) \\
+                                        									& \hspace{5mm} $or, if last digit's label is odd:$ \\
+																			& \hspace{5mm} n \equiv (-d_{k - 1}) + d_{k - 2} + ... + (-d_{1}) + d_{0} $ $ ($mod $ 11)
+    \end{array} \\ \)
+    
+    Without loss of generality, let the last digit's label be even. \\
+    Want to prove: \\
+    
+    \centerline{\textbf{(1)} $11 \mid [(d_{0} + d_{2} + ... + d_{k - 1}) - (d_{1} + d_{3} + ... + d_{k - 2})] \Leftrightarrow 11 \mid n$ \textbf{(2)}}
+    
+    \( \\
+    \begin{array}{ll}
+     	\textbf{(1)} & \Rightarrow (d_{0} + d_{2} + ... + d_{k - 1}) - (d_{1} + d_{3} + ... + d_{k - 2}) \equiv 0 $ $ ($mod $ 11) \\
+        			 & \Rightarrow d_{k - 1} + (-d_{k - 2}) + ... + (-d_{3}) + d_{2} + (-d_{1}) + d_{0} \equiv 0 $ $ ($mod $ 11) \\
+                     & \Rightarrow n \equiv 0 $ $ ($mod $ 11) \\
+                     & \Rightarrow 11 \mid n
+    \end{array} \\ \)
+    
+    \( \\
+    \begin{array}{lll}
+     	\textbf{(2)} & \Rightarrow n \equiv 0 $ $ ($mod $ 11) \\
+        			 & \Rightarrow d_{k - 1} + (-d_{k - 2}) + ... + (-d_{3}) + d_{2} + (-d_{1}) + d_{0} \equiv 0 $ $ ($mod $ 11) \\
+                     & \Rightarrow (d_{0} + d_{2} + ... + d_{k - 1}) - (d_{1} + d_{3} + ... + d_{k - 2}) \equiv 0 $ $ ($mod $ 11) \\
+                     & \Rightarrow 11 \mid [(d_{0} + d_{2} + ... + d_{k - 1}) - (d_{1} + d_{3} + ... + d_{k - 2})] $ $ & \square
+    \end{array} \\ \)
+    
+    Thus, $11 \mid [(d_{0} + d_{2} + ... + d_{k - 1}) - (d_{1} + d_{3} + ... + d_{k - 2})] \Leftrightarrow 11 \mid n$.
+
+    \item
+    \begin{myEnumerate}
+    	\item
+        $p = 13, q = 17$.
+        
+        \item
+        $(p - 1)(q - 1) = 192$
+        
+        \( \\
+        \begin{array}{llll}
+        	192 & = 113 & + & 79 \\
+            113 & = 79 & + & 34 \\
+            79 & = 2 \cdot 34 & + & 11 \\
+            34 & = 3 \cdot 11 & + & 1 \\
+        \end{array} \\ \)
+        
+        \(
+        \begin{array}{ll}
+        	34 = 3 \cdot 11 + 1 & \Rightarrow 34 - 3 \cdot 11 = 1 \\
+            					& \Rightarrow 113 - 79 - 3(79 - 2 \cdot 34) = 1 \\
+                                & \Rightarrow 113 - 4 \cdot 79 + 6 \cdot 34 = 1 \\
+								& \Rightarrow 113 - 4 \cdot (192 - 113) + 6 \cdot (113 - 79) = 1 \\
+								& \Rightarrow 11 \cdot 113 - 4 \cdot 192 - 6 \cdot 79 = 1 \\
+								& \Rightarrow 11 \cdot 113 - 4 \cdot 192 - 6 \cdot (192 - 113) = 1 \\
+                                & \Rightarrow 17 \cdot 113 - 10 \cdot 192 = 1
+        \end{array} \\ \)
+        
+        $e^{-1} \equiv 113^{-1} \equiv 17$ (mod $192$) \\
+        
+        Then, $d = 17$ \\
+        
+        Let $M$ be $E$ decoded. \\
+        
+        \(
+        \begin{array}{ll}
+        	M & \equiv E^{d} $ $ ($mod $ 221) \\
+              & \equiv 2^{17} $ $ ($mod $ 221) \\
+              & \equiv 19 $ $ ($mod $ 221) \\
+        \end{array} \\ \)
+        
+        \item
+        $p - 1 = 12$ \\
+        $q - 1 = 16$
+        
+        \( \\
+        \begin{array}{llll}
+        	113 & = 9 \cdot 12 & + & 5 \\
+            12 & = 2 \cdot 5 & + & 2 \\
+            5 & = 2 \cdot 2 & + & 1 \\
+        \end{array} \\ \)
+        
+        \(
+        \begin{array}{ll}
+        	5 = 2 \cdot 2 + 1 & \Rightarrow 5 - 2 \cdot 2 = 1 \\
+            				  & \Rightarrow 113 - 9 \cdot 12 - 2(12 - 2 \cdot 5) = 1 \\
+                              & \Rightarrow 113 - 11 \cdot 12 + 4(113 - 9 \cdot 12) = 1 \\
+							  & \Rightarrow 5 \cdot 113 - 47 \cdot 12 = 1 \\
+        \end{array} \\ \)
+        
+        $e^{-1} \equiv 113^{-1} \equiv 5$ (mod $12$) \\
+        Let $d_{1} = 5$. \\
+        
+        $113 = 7 \cdot 16 + 1 \Rightarrow 113 - 7 \cdot 16 = 1$
+        
+        $e^{-1} \equiv 113^{-1} \equiv 1$ (mod $16$) \\
+        Let $d_{2} = 1$.
+        
+        \( \\
+        \begin{array}{ll}
+        	\left\{
+    			\begin{array}{ll}
+        			x \equiv E^{d_{1}} $ $ ($mod $ p) \\
+        			x \equiv E^{d_{2}} $ $ ($mod $ q)
+    			\end{array}
+			\right.
+        	& \Rightarrow
+            \left\{
+    			\begin{array}{ll}
+        			x \equiv 2^{5} $ $ ($mod $ 13) \\
+        			x \equiv 2^{1} $ $ ($mod $ 17)
+    			\end{array}
+			\right. \\
+            
+            & \Rightarrow
+            \left\{
+    			\begin{array}{ll}
+        			x \equiv 6 $ $ ($mod $ 13) \\
+        			x \equiv 2 $ $ ($mod $ 17)
+    			\end{array}
+			\right.
+        \end{array} \\ \)
+        
+        \(
+        \begin{array}{ll}
+        	17 & = 13 + 4 \\
+			13 & = 3 \cdot 4 + 1 \\
+        \end{array} \\ \)
+        
+        \(
+        \begin{array}{ll}
+        	13 = 3 \cdot 4 + 1 & \Rightarrow 13 - 3 \cdot 4 = 1 \\
+            				   & \Rightarrow 13 - 3(17 - 13) = 1 \\
+                               & \Rightarrow 4 \cdot 13 - 3 \cdot 17 = 1
+        \end{array} \\ \)
+        
+        By the Chinese Remainder Theorem,
+        
+        \(
+        \begin{array}{ll}
+        	M & \equiv x $ $ ($mod $ 221) \\
+              & \equiv 6(-3 \cdot 17) + 2(4 \cdot 13) $ $ ($mod $ 221) \\
+              & \equiv -202 $ $ ($mod $ 221) \\
+              & \equiv 19 $ $ ($mod $ 221) \\
+        \end{array} \\ \)
+        
+    \end{myEnumerate}
+
+\end{myEnumerate}
+
+\end{document}

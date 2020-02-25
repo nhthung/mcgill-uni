@@ -1,0 +1,14 @@
+{"Users": [
+  {
+    "Username": "Bob@hotmail.com",
+    "Password": "abc123",
+    "Times Logged In": 5,
+    "Last Login": "07/10/18"
+  },
+  {
+    "Username": "Mary@gmail.com",
+    "Password": "a2b3c4",
+    "Times Logged In": 7,
+    "Last Login": "08/30/18"
+  }
+]}

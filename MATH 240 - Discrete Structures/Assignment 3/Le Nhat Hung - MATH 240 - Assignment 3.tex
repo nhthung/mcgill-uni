@@ -1,0 +1,161 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{fullpage}
+
+\newlist{myEnumerate}{enumerate}{9}
+\setlist[myEnumerate,1]{label=\arabic*.}
+\setlist[myEnumerate,2]{label=(\alph*)}
+\setlist[myEnumerate,3]{label=\roman*.}
+
+
+\begin{document}
+
+\noindent
+\large\textbf{Assignment 3} \hfill \textbf{LE, Nhat Hung} \\
+\normalsize MATH 240 \hfill \today
+
+\begin{myEnumerate}
+	\item
+	\begin{myEnumerate}
+    	\item \( \\
+        	\begin{array}{llr}
+            	(A\backslash B)\backslash C & = (A\cap \overline{B})\cap \overline{C} \\
+                & = A\cap(\overline{B}\cap \overline{C}) \\
+                & = A\cap(\overline{B\cup C}) \\
+                & = A\backslash (B\cup C) \\
+            \end{array} \)
+        
+    	\item \( \\
+        	\begin{array}{llr}
+            	A\oplus B=A\oplus C & \Rightarrow A\oplus(A\oplus B)=A\oplus(A\oplus C) \\
+                & \Rightarrow (A\oplus A)\oplus B=(A\oplus A)\oplus C \\
+                & \Rightarrow \emptyset\oplus B=\emptyset \oplus C \\
+                & \Rightarrow B=C \\
+            \end{array} \)
+        
+        \item
+        	Let $A=D=\{1\}$, $B=C=\{2\}$. Counterexample: \\ \(
+            \begin{array}{llr}
+            	(1, 1) & \in (A\cup B)\times (C\cup D) \\
+                & \notin (A\times C)\cup (B\times D) 
+            \end{array} \\\\ \)
+            Thus, $(A\cup B)\times (C\cup D)\neq (A\times C)\cup (B\times D)$.
+            
+    \end{myEnumerate}
+
+	\item
+	\begin{myEnumerate}
+    	\item
+        \begin{myEnumerate}
+        	\item
+            Let $X=\emptyset$. \\
+            $X\in \wp (A)$, $X\cap X=\emptyset$. \\
+            $(X,X)\notin \mathcal{R}$. $\mathcal{R}$ not reflexive. \\
+            
+            \(
+            \begin{array}{llr}
+                 (X, Y)\in \mathcal{R} & \Rightarrow X, Y\in \wp (A)\land (X\cap Y)\neq \emptyset \\
+                 & \Rightarrow (Y, X)\in (\wp (A))^{2} \land (Y\cap X)\neq \emptyset \\
+                 & \Rightarrow (Y, X)\in \mathcal{R} \\
+                 & \Rightarrow \mathcal{R} \textnormal{ symmetric}
+            \end{array} \\\\ \)
+            
+            Let $(X, Y)\in \mathcal{R}$, $X\neq Y$. \\
+            $\mathcal{R}$ symmetric, so $(Y, X)\in \mathcal{R}$. Still, $X\neq Y$. \\
+            Thus, $\mathcal{R}$ not antisymmetric. \\
+            
+            Let $(X, Y), (Y, Z)\in \mathcal{R}$, $Z\subseteq Y$ and $X = Y\backslash Z$. \\
+            $X\cap Z = \emptyset$.
+            Thus $(X, Z)\notin \mathcal{R}$. \\
+            $\mathcal{R}$ not transitive. \\
+            
+            $\mathcal{R}$ isn't reflexive, antisymmetric or transitive, thus isn't a partial order nor total order. \\
+            
+            \item
+            Let $a\in \mathbb{N}$. \\
+            $a|a$. Thus $(a, a)\in \mathcal{R}$.
+            $\mathcal{R}$ reflexive. \\
+            
+            $1|2$. So $(1, 2)\in \mathcal{R}$. \\
+            2 doesn't divide 1. \\
+            Thus $(2, 1)\notin \mathcal{R}$. $\mathcal{R}$ not symmetric. \\
+            
+            \( \begin{array}{llr}
+                 (a, b), (b, a)\in \mathcal{R} & \Rightarrow a|b \land b|a \\
+                 & \Rightarrow a\leq b\land a\geq b \\
+                 & \Rightarrow a = b \\
+                 & \Rightarrow \mathcal{R} \textnormal{ antisymmetric}
+            \end{array} \\\\ \)
+            
+            \( \begin{array}{llr}
+            	(a, b)(b, c)\in \mathcal{R} & \Rightarrow \exists k,l\in \mathbb{Z}, b=ka \land c=lb \\
+                & \Rightarrow c=(lk)a \\
+                & \Rightarrow (a, c)\in \mathcal{R} \\
+                & \Rightarrow \mathcal{R} \textnormal{ transitive}
+            \end{array} \\ \)
+            
+            $\mathcal{R}$, reflexive, antisymmetric and transitive, is thus a partial order. \\
+            
+            Take 2 and 3. \\
+            $2, 3\in \mathbb{N}$, but $(2, 3),(2, 3)\notin \mathcal{R}$. \\
+            Thus, $\mathcal{R}$ not a total order. \\
+            
+        \end{myEnumerate}
+        \item $\mathcal{R}= \{(a, b)\in (\mathbb{R}\backslash \{0\})^{2}|\frac{a}{b}\in \mathbb{Q}\}$ \\
+        
+        Let $x\in \mathbb{R}\backslash \{0\}$. Then, $\frac{x}{x}\in \mathbb{Q}$. \\
+        Thus $(x, x)\in \mathcal{R}$. $\mathcal{R}$ reflexive. \\
+        
+         \( \begin{array}{llr}
+            	(x, y)\in \mathcal{R} & \Rightarrow \frac{x}{y}\in \mathbb{Q} \\
+                & \Rightarrow \frac{y}{x}\in \mathbb{Q} \\
+                & \Rightarrow (y, x)\in \mathcal{R} \\
+                & \Rightarrow \mathcal{R} \textnormal{ symmetric}
+            \end{array} \\\\ \)
+            
+         \( \begin{array}{llr}
+            	(x, y), (y, z)\in \mathcal{R} & \Rightarrow \frac{x}{y}, \frac{y}{z}\in \mathbb{Q} \\
+                & \Rightarrow \frac{xy}{yz}\in \mathbb{Q} \\
+                & \Rightarrow \frac{x}{z}\in \mathbb{Q} \\
+                & \Rightarrow (x, z)\in \mathcal{R} \\
+                & \Rightarrow \mathcal{R} \textnormal{ transitive}
+            \end{array} \\ \)
+            
+         $\mathcal{R}$, or $\sim$, reflexive, symmetric and transitive, is thus an equivalence relation. \\
+         
+         \( \begin{array}{llr}
+            	\frac{\frac{9-\sqrt{5}}{1-\sqrt{5}}}{\frac{2}{3-6\sqrt{5}}} & = \frac{57-57\sqrt{5}}{2-2\sqrt{5}} \\
+                & =\frac{57}{2} \\
+                & \in \mathbb{Q} \\
+                & \Rightarrow [\frac{9-\sqrt{5}}{1-\sqrt{5}}]=[\frac{2}{3-6\sqrt{5}}]\\
+            \end{array} \\ \)            
+
+    \end{myEnumerate}
+
+    \item
+    \begin{myEnumerate}
+    	\item
+        \( \\ \begin{array}{llr}
+            	a\pm b\in \mathbb{Q} & \Rightarrow a\pm b=\frac{m}{n}\textnormal{; }m,n\in \mathbb{Z} \\
+                & \Rightarrow \pm b=\frac{m}{n}-a \\
+                & \Rightarrow \pm b=\frac{m-na}{n} \\
+                & \Rightarrow \pm b\in \mathbb{Q}
+            \end{array} \\ \)
+        
+        which contradicts $b\notin \mathbb{Q}$. \\
+        Thus, $a\in \mathbb{Q} \land b\notin \mathbb{Q}\Rightarrow a\pm b\notin \mathbb{Q}$. \\
+        
+        \item Let $a, b, c, d\in \mathbb{Q}$ \\
+        \( \begin{array}{llr}
+            	a\leq 11, b\leq 10, c\leq 9, d\leq 8 & \Rightarrow \frac{a+b+c+d}{4}\leq 9.5 \\
+                & \Rightarrow \frac{a+b+c+d}{4}\neq 10
+            \end{array} \\ \)
+        
+        which contradicts ``the average of 4 distinct integers is 10". \\
+        Thus, if the average of 4 distinct integers is 10, then at least one of the integers is greater than 11.
+    \end{myEnumerate}
+
+\end{myEnumerate}
+
+\end{document}

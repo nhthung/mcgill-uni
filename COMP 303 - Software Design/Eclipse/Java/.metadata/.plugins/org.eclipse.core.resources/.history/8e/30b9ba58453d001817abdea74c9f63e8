@@ -1,0 +1,31 @@
+package JavaCool303;
+
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.util.ArrayList;
+
+import javax.swing.JPanel;
+
+public class Cool303Root extends Cool303Container {
+	private ArrayList<Cool303Container> containers;
+	
+	
+	Cool303Root() {
+		containers = new ArrayList<Cool303Container>();
+		
+		setLayout(new FlowLayout());
+		setPreferredSize(new Dimension(325*2, 300));
+	}
+	
+	void add(Cool303Container c) {
+		containers.add(c);
+		
+		super.add(c);
+	}
+	
+	void applyTheme(Cool303Theme theme) {		
+		for (Cool303Container c: containers)
+			c.applyTheme(theme);
+	}
+}

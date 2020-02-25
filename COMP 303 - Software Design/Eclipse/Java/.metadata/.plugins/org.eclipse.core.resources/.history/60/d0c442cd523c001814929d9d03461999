@@ -1,0 +1,9 @@
+package JavaCool303;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public interface Cool303Component extends Component {
+	void applyTheme() {}
+}

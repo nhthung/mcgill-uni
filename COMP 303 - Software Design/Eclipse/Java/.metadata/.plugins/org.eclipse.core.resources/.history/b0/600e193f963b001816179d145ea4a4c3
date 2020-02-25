@@ -1,0 +1,24 @@
+package JavaCool303;
+
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.util.ArrayList;
+
+import javax.swing.JPanel;
+
+public class Cool303Root extends Component {
+	private JPanel panel;
+	private ArrayList<Cool303Container>;
+	
+	Cool303Root() {
+		panel = new JPanel();
+		
+		panel.setLayout(new FlowLayout());
+	}
+	
+	void add(Cool303Container c) {
+		panel.add(c.getPanel());
+	}
+}

@@ -1,0 +1,20 @@
+public class CityTest{
+  private static String name;
+  private static Integer population;
+  
+  public CityTest(String name, Integer population){
+    this.name = name;
+    this.population = new Integer(population);
+  }
+  
+  public String toString(){
+    return name + ": " + population;
+  }
+  
+  public static void main(String[] args){
+    CityTest novigrad = new CityTest("Novigrad", 100000);
+    System.out.println(novigrad);
+    CityTest oxenfurt = new CityTest("Oxenfurt", 12000);
+    System.out.println(novigrad);
+  }
+}

@@ -1,0 +1,62 @@
+Elastic Beanstalk domain:
+piccup-dev.ca-central-1.elasticbeanstalk.com
+
+eb init:
+
+keypair name: piccup-key
+passphrase: littlepicmeup
+
+Your identification has been saved in /home/mrbrownstone/.ssh/piccup-key.
+Your public key has been saved in /home/mrbrownstone/.ssh/piccup-key.pub.
+The key fingerprint is:
+SHA256:KGqiTmW3jOrZh8aXyCHxBhqhHkgnNUIV3uAZbIgP87A piccup-key
+The key's randomart image is:
++---[RSA 2048]----+
+|oo=B.            |
+|*+++*            |
+|+O++ .           |
+|E+o    .         |
+|o.=o... S        |
+|.oo=+..          |
+|..B.+o.          |
+|oo+* +           |
+|+=..o            |
++----[SHA256]-----+
+
+
+eb create:
+
+environment name: Piccup-dev
+DNS CNAME prefix: Piccup-dev
+load balancer type: 2) application
+
+2.0+ Platforms require a service role. We will attempt to create one for you. You can specify your own role using the --service-role option.
+
+
+eb console -> Database settings:
+username: master
+password: AKIAIYTG7
+
+
+Command for ssh:
+(in pipenv shell) eb ssh
+
+
+Superuser:
+email: le.nhthung@gmail.com
+password: piccup789
+
+
+IAM users:
+
+username: root
+password: piccup789
+access key id: AKIAIYTG7ST7AN667MBA
+secret access key: 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
+
+username: manager
+group: Manage-Piccup
+key: manage-piccup
+value: access-to-s3-bucket
+access key id: AKIAJPPY7RJO2BYUEHBQ
+secret access key: 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

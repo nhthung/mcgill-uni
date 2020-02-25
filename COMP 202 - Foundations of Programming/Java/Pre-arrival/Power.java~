@@ -1,0 +1,14 @@
+public class Power{
+  public static void main(String[] args){
+    String x = args[0]; String n = args[1];
+    System.out.println(power(Double.parseDouble(x); Interger.parseInt(n)));
+  }
+  
+  public static double power(double x, integer n){
+    if(n == 0){
+      return 1.0;
+    } else{
+      return x * power(x, n - 1);
+    }
+  }
+}

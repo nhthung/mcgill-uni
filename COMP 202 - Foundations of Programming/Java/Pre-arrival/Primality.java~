@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Primality{
+  public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    int counter = 0;
+    int n = scan.nextInt();
+    if(n == 2 || n == 3)
+      System.out.println("Is prime");
+    else{
+      for(int divisor = 2; divisor <= (int)Math.sqrt(n); divisor++){
+        if( (n%divisor) == 0 )
+          counter++;
+      }
+    }
+    if(counter != 0)
+      System.out.println("Not prime");
+    else if(n != 2 && n != 3)
+      System.out.println("Is prime");
+  }
+}
+      
+    

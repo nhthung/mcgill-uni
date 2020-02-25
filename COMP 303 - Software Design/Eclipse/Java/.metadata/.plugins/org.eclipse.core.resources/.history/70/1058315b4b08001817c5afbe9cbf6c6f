@@ -1,0 +1,168 @@
+/* ==============================================================
+ * File Name: Main.java
+ * ==============================================================
+ * Developer: Le Nhat Hung
+ * Purpose: 
+ * Inputs: 
+ * Outputs: 
+ * Side-effects: 
+ * ==============================================================
+ * Modifications
+ * ==============================================================
+ * February 1 2018 - 
+ */
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Bank {
+	static ArrayList customers = new ArrayList<Customer>();
+	static Scanner scan = new Scanner(System.in);
+	
+	static void createCustomer() {
+		String name;
+		String discountPercentage;
+		
+		System.out.print("\nCustomer name: ");
+		name = scan.nextLine();
+		
+		while (true) {
+			System.out.print("Customer's discount percentage: ");
+			discountPercentage = scan.nextLine();
+			
+			if ( !isPositiveNumeric(discountPercentage) )
+				System.out.println("\nDiscount percentage must be a positive number.");
+			else break;
+		}
+		
+		customers.add( new Customer( name, Double.parseDouble(discountPercentage) ) );
+		
+		System.out.println("New customer created.\n");
+	}
+	
+	static void createAccount() {
+		int customerNumber;
+		char accountType;
+		String initialDeposit;
+		
+		if (customers.size() == 0) {
+			System.out.println("Need to create customers before accounts.");
+			return;
+		}
+				
+		while (true) {
+			customerNumber = chooseCustomer();
+			
+			if (customerNumber != -1)
+				break;
+		}
+		
+		System.out.println("\nAccount types:\n"
+				+ "(a) Chequing\n"
+				+ "(b) Savings");
+		
+		while (true) {
+			accountType = getMenuChoice();
+			
+			if (accountType != 'a' && accountType != 'b')
+				System.out.println("Enter \"a\" or \"b\".");
+			else break;
+		}
+		
+		while (true) {
+			System.out.print("Initial deposit: ");
+			initialDeposit = scan.nextLine();
+			
+			if ( !isPositiveNumeric(initialDeposit) )
+				System.out.println("\nInitial deposit must be positive.");
+			else break;
+		}
+		
+		( (Customer)customers.get(customerNumber) ).addAccount( accountType, Double.parseDouble(initialDeposit) );
+		
+		switch (accountType) {
+		case 'a': System.out.print("Chequing account "); break;
+		case 'b': System.out.print("Savings account "); break;
+		}
+		
+		System.out.println("created for customer " + ((Customer) customers.get(customerNumber)).getName()
+				+ ", with initial deposit " + Double.parseDouble(initialDeposit) + " garlicoins.\n");
+	}
+	
+	static void showBalance() {}
+	
+	static void deposit() {}
+	
+	static void withdrawal() {}
+	
+	static void transfer() {}
+	
+	static void displayMenu() {
+		System.out.println("(a) Create customer\n"
+				+ "(b) Create bank account\n"
+				+ "(c) Get balance\n"
+				+ "(d) Deposit\n"
+				+ "(e) Withdrawal\n"
+				+ "(f) Make a tranfer\n"
+				+ "(g) Quit");
+	}
+	
+	static int chooseCustomer() {
+		String customerNumber;
+		
+		for ( int i = 0; i < customers.size(); i++ )
+			System.out.println( customers.get(i) + "\n" );
+		
+		System.out.print("Enter customer number: ");
+		customerNumber = scan.nextLine();
+		
+		if ( !isPositiveNumeric(customerNumber) || Integer.parseInt(customerNumber) >= customers.size() ) {
+			System.out.println("Invalid customer number.\n");
+			return -1;
+		}		
+		
+		return Integer.parseInt(customerNumber);
+	}
+	
+	static char getMenuChoice() {
+		String input;
+		
+		while (true) {
+			System.out.print("Your choice (one letter): ");
+			input = scan.nextLine();
+			
+			if (input.length() == 1) break;
+		}
+		
+		return input.charAt(0);
+	}
+	
+	static boolean isPositiveNumeric(String input) {
+		for ( int i = 0; i < input.length(); i++ )
+			if ( !Character.isDigit( input.charAt(i) ) )
+				return false;
+		
+		return true;
+	}
+	
+	public static void main(String[] args) {
+		char choice;
+		
+		while(true) {
+			displayMenu();
+			choice = getMenuChoice();
+			
+			switch (choice) {
+			case 'a': createCustomer(); break;
+			case 'b': createAccount(); break;
+			case 'c': showBalance(); break;
+			case 'd': deposit(); break;
+			case 'e': withdrawal(); break;
+			case 'f': transfer(); break;
+			}
+			
+			if (choice == 'g') break;
+		}
+	}
+
+}

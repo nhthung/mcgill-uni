@@ -1,0 +1,8 @@
+package JavaCool303;
+
+import java.awt.Component;
+import java.util.ArrayList;
+
+public interface Cool303Container {
+	ArrayList<Component> getComponents();
+}

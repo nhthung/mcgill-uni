@@ -1,0 +1,23 @@
+Company ABC wants the software to track employee work hours and produce
+employee widget production statistics, nothing more.
+
+If they are constructing more than one widget there is an optional place to enter
+the number of widgets created, otherwise it assumes one widget. After they finish building a
+widget, they place the finished widget in the shipping room and punch out.
+
+The system records
+the amount of time it took them to create those n widgets, saving that into a database as a
+punch transaction (containing punch-in time, punch-out time, quantity of widgets, and
+employee ID).
+
+If they plan to build another widget from raw material, they then get additional
+raw material and they punch in again.
+
+At the end of the day the manager generates a report of
+the number of widgets created for a period by employee (widget production history). The
+manager must also enter their ID number, which is also validated by the system, before they
+can use it.
+
+By default, the system assumes the current date but optionally the manager can
+specify a date range. The report lists each employee and the quantity of widgets they built
+within the specified period.

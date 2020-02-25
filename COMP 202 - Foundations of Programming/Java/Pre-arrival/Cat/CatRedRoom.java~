@@ -1,0 +1,16 @@
+class CatRedRoom{
+  public static void main(String[] args){
+    CatRescue shelter = new CatRescue(5);
+    Cat studmuffin = new Cat("Studmuffin", 1.0);
+    Cat geralt = new Cat("Geralt", 0.7);
+    studmuffin.meow();
+    studmuffin.birthday();
+    studmuffin.meow();
+    shelter.addCat(geralt);
+    shelter.addCat(studmuffin);
+    
+    shelter.print();
+    shelter.adopt();
+    shelter.print();
+  }
+}

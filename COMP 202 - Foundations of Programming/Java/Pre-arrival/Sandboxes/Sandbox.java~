@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Sandbox{
+  public static void main(String[] args){
+    String poop = "I am the walrus";
+    String poop2 = "I am the egg man ";
+    System.out.println(poop.substring(0, 15));
+    
+    Scanner scan = new Scanner(System.in);
+    int grade = scan.nextInt();
+    int category = grade/10;
+    System.out.println(category);
+    
+    String word = scan.next();
+    System.out.println(word + "\n");
+    
+    int number = scan.nextInt();
+    System.out.print(reverse(number));
+    
+    System.out.print(foo(3 == 3));
+  }
+  
+  public static int reverse(int number){
+    int reversed = 0;
+    do{
+      int lastDigit = number%10;
+      reversed = reversed*10 + lastDigit;
+      number /= 10;
+    } while(number > 0);
+    return reversed;
+  }
+  
+  public static int foo(boolean y) {
+    if (y)
+      return 3;
+    else
+      return 4;
+  }
+}

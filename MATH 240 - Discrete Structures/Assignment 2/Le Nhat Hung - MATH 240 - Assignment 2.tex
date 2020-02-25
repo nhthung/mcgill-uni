@@ -1,0 +1,104 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{fullpage}
+
+\newlist{myEnumerate}{enumerate}{9}
+\setlist[myEnumerate,1]{label=\arabic*.}
+\setlist[myEnumerate,2]{label=(\alph*)}
+\setlist[myEnumerate,3]{label=\roman*.}
+
+
+\begin{document}
+
+\noindent
+\large\textbf{Assignment 2} \hfill \textbf{LE, Nhat Hung} \\
+\normalsize MATH 240 \hfill \today
+
+\begin{myEnumerate}
+	\item
+	\begin{myEnumerate}
+    	\item
+    	\begin{myEnumerate}
+        	\item $\exists{x}(D(x)\wedge R(x))$
+        	\item $\forall{x}(\neg D(x)\vee \neg R(x))$
+        	\item Everything isn't in the state of Denmark or isn't rotten.
+        \end{myEnumerate}
+    	\item
+    	\begin{myEnumerate}
+        	\item $\forall{\epsilon}\in \mathbb{R}_{>0}[\exists{N}\in \mathbb{R}_{>0}(B(x,N)\Rightarrow B(\epsilon, |f(x)-L|)]$
+        	\item $\exists{\epsilon}\in \mathbb{R}_{>0}[\forall{N}\in \mathbb{R}_{>0}(B(x,N)\wedge \neg B(\epsilon, |f(x)-L|)]$
+        	\item There exists a positive real $\epsilon$ such that for all positive real $N$, $x>N$ and $|f(x)-L|\ge \epsilon$. \\
+        \end{myEnumerate}
+    \end{myEnumerate}
+
+	\item
+	\begin{myEnumerate}
+    	\item The table below shows for all truth value combinations of $P$, $Q$, $R$,\\ $(P\Rightarrow Q)\land (Q\Rightarrow R)\Rightarrow (P\Rightarrow R)$ is true, i.e. the latter is a tautology. \\ \\
+    	\begin{tabular}{|c|c|c|c|c|c|c|}
+        	\hline
+            $P$ & $Q$ & $R$ & $P\Rightarrow Q$ & $Q\Rightarrow R$ & $P\Rightarrow R$ & $(P\Rightarrow Q)\land (Q\Rightarrow R)\Rightarrow (P\Rightarrow R)$ \\
+            \hline
+            T & T & T & T & T & T & T \\
+            T & T & F & T & F & F & T \\
+            T & F & T & F & T & T & T \\
+            T & F & F & F & T & F & T \\
+            F & T & T & T & T & T & T \\
+            F & T & F & T & F & T & T \\
+            F & F & T & T & T & T & T \\
+            F & F & F & T & T & T & T \\
+            \hline
+    	\end{tabular}
+        \\ \\
+        \item
+        \(
+        \\
+        \begin{array}{llr}
+        	(P\Rightarrow Q) \wedge \neg Q \Rightarrow \neg P & \equiv (\neg P \lor Q) \land \neg Q \Rightarrow \neg P & conditional \\
+            & \equiv (\neg P \land \neg Q) \lor (Q \land \neg Q) \Rightarrow \neg P & distribution \\
+            & \equiv (\neg P \land \neg Q) \lor \mathbb{F} \Rightarrow \neg P & complement \\
+            & \equiv (\neg P \land \neg Q) \Rightarrow \neg P & identity \\
+            & \equiv P \lor Q \lor \neg P & conditional, DeMorgan's \\
+            & \equiv Q \lor \mathbb{T} & complement \\
+            & \equiv \mathbb{T} & domination \
+        \end{array}
+        \)
+        \\
+
+        \item $S$: study, $P$: pass, $M$: watch a movie. \\
+        \(
+        \begin{array}{llr}
+        	(S \Rightarrow P) \land (\neg M \Rightarrow S) \land \neg P \Rightarrow M & \equiv (S \land \neg P) \lor (\neg M \land \neg S) \lor P \lor M & conditional, \\
+            && DeMorgan's \\
+            & \equiv [(S \lor P) \land (\neg P \lor P)] \lor & association, \\
+            & [(\neg M \lor M) \land (\neg S \lor M)] & distribution \\
+            & \equiv [(S \lor P) \land \mathbb{T}] \lor [\mathbb{T} \land (\neg S \lor M)] & complement \\
+            & \equiv \mathbb{T} \land [(S\lor P)\lor (\neg S\lor M)] & distribution \\
+            & \equiv (S\lor P)\lor (\neg S\lor M) & identity \\
+            & \equiv \mathbb{T}\lor P\lor M & association, \\
+            && complement \\
+            & \equiv \mathbb{T} & domination \\
+        \end{array}
+        \)
+        \\
+        The argument's thus valid. \\\\\\
+
+    \end{myEnumerate}
+
+    \item
+    \begin{myEnumerate}
+    	\item $A\oplus C=\{-1, 0, 2, 3, 4, 5, 6\}$
+        \item $A\cap D=\{1, 2\}$
+        \item $C\cup D=\{-1, 0, 1, 2, \{1, 2\}\}$
+        \item $\{1, \{2\}\}\cup D= \{1, 2, \{2\}, \{1, 2\}\}$
+        \item $B \backslash (A\oplus C)=\{q\in \mathbb{Q}|q\in (1, 2)\cup (2, 3)\}$
+        \item $\{\emptyset \}\backslash \wp(A)=\emptyset$
+        \item $(A\backslash B)\backslash (C\backslash \overline{D})=\{1, 3, 4, 5, 6\}\backslash \{1\}=\{3, 4, 5, 6\}$
+        \item $\wp(D)\cap D=\{\{1, 2\}\}$ \\
+    \end{myEnumerate}
+
+    \item (a) \hspace{4.5cm} (b) \hspace{4.5cm} (c)
+
+\end{myEnumerate}
+
+\end{document}

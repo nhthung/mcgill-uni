@@ -1,0 +1,229 @@
+\documentclass{article} 
+
+\usepackage{amsmath,amsthm,amssymb,enumerate,dsfont,textpos}
+
+\newtheorem{problem}{Problem} 
+
+\theoremstyle{definition} 
+
+\newtheorem*{solution}{Solution} 
+
+\begin{document} \title{Assignment 1} 
+
+\author{Laetitia Fesselier, ID 260791354} 
+
+\date{\today}
+
+\maketitle
+
+\begin{problem} 
+Use a truth table to determine if each statement is a tautology, contradiction, or contingency.
+\end{problem}
+
+\begin{enumerate}[(a)]
+\item \((P \lor Q) \Rightarrow \neg P\)
+\end{enumerate}
+
+
+\begin{solution}
+\end{solution}
+
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  P & Q & P $\lor$ Q & $\neg$ P &   P $\lor$ Q  $\Rightarrow$ $\neg$ P \\
+  \hline
+  T & T & T & F & F \\
+  T & F & T & F & F \\
+  F & T & T & T & T \\
+  F & F & F & T & T \\
+  \hline
+\end{tabular}
+\medskip \par
+
+The statement is a contingency.\\
+
+\begin{enumerate}[(b)]
+\item \(( P \Leftrightarrow Q) \land (Q \Leftrightarrow R) \Rightarrow (P \Leftrightarrow R)\)
+\end{enumerate}
+
+\begin{solution}
+\end{solution}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+  \hline
+  P & Q & R & P $\Leftrightarrow$ Q & Q $\Leftrightarrow$ R &  P $\Leftrightarrow$ R & (P $\Leftrightarrow$ Q) $\land$ (Q $\Leftrightarrow$ R) & (b) \\
+  \hline
+  T & T & T & T & T & T & T & T \\
+  T & T & F & T & F & F & F & T \\
+  T & F & T & F & F & T & F & T \\
+  T & F & F & F & T & F & F & T \\
+  F & T & T & F & T & F & F & T \\
+  F & T & F & F & F & T & F & T \\
+  F & F & T & T & F & F & F & T \\
+  F & F & F & T & T & T & T & T \\
+  \hline
+\end{tabular}
+\medskip \par
+
+The statement is a tautology.\\
+
+\pagebreak
+\begin{enumerate}[(c)]
+\item \( [(P \oplus Q) \oplus \neg Q] \Leftrightarrow P\)
+\end{enumerate}
+
+\begin{solution}
+\end{solution}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  P & Q & P $\oplus$ Q & $\neg$ Q & (P $\oplus$ Q) $\oplus$ $\neg$Q & [(P $\oplus$ Q) $\oplus$ $\neg$Q] $\Leftrightarrow$ P  \\
+  \hline
+  T & T & F & F & F & F \\
+  T & F & T & T & F & F \\
+  F & T & T & F & T & F \\
+  F & F & F & T & T & F \\
+  \hline
+\end{tabular} 
+\medskip \par
+The statement is a contradiction.\\
+
+\begin{problem}
+Verify the following statements using only identities. Show
+all of your work and name the identity or identities used in each step.
+\end{problem}
+
+\begin{enumerate}[(a)]
+\item \( [(P \Rightarrow Q) \land P] \Rightarrow Q\) is a tautology 
+\end{enumerate}
+
+\begin{solution}
+\end{solution}
+
+\(
+\begin{array}{llr}
+	[P \Rightarrow Q) \land P] \Rightarrow Q & \equiv (\neg P \lor Q) \land P \Rightarrow Q & \text{(conditional)} \\
+	&\equiv (\neg P \land P) \lor (Q \land P) \Rightarrow Q & \text{(distributivity)} \\
+	&\equiv \mathds{F} \lor (Q \land P) \Rightarrow Q  & \text{(complement)} \\
+	&\equiv Q \land P \Rightarrow Q & \text{(identity)} \\
+	&\equiv \neg (Q \land P) \lor Q & \text{(conditional)} \\
+	&\equiv \neg Q \lor \neg P \lor Q & \text{(DeMorgan's law)} \\
+	&\equiv \neg Q \lor Q \lor \neg P & \text{(commutativity)} \\
+	&\equiv \mathds{T} \lor \neg P & \text{(complement)} \\
+	&\equiv \mathds{T} & \text{(domination)} \\
+	&&\qed
+\end{array}
+\)
+
+\begin{enumerate}[(b)]
+\item \( \neg (P \land Q) \land (Q \Rightarrow P) \equiv \neg Q \)
+\end{enumerate}
+
+\begin{solution}
+\end{solution}
+
+\(
+\begin{array}{llr}
+	\neg (P \land Q) \land (Q \Rightarrow P) &\equiv \neg (P \land Q) \land (\neg Q \lor P) & \text{(conditional)} \\
+	&\equiv (\neg P \lor \neg Q) \land (\neg Q \lor P) & \text{(DeMorgan's law)} \\
+	&\equiv \neg Q \lor (\neg P \land P) & \text{(commutativity, distributivity)} \\
+	&\equiv \neg Q \lor \mathds{F} & \text{(complement)} \\
+	&\equiv \neg Q & \text{(identity)} \\
+	&&\qed
+\end{array}
+\)
+
+\pagebreak
+
+\begin{enumerate}[(c)]
+\item \( \neg[(P \lor Q) \lor [(Q \lor \neg R) \land (P \lor R)]] \equiv \neg P \land \neg Q \)
+\end{enumerate}
+
+\begin{solution}
+\end{solution}
+
+\(
+\begin{array}{llr}
+	& \neg[(P \lor Q) \lor [(Q \lor \neg R) \land (P \lor R)]] \\
+	\equiv & \neg[(P \lor Q) \lor [[(Q \lor \neg R) \land P] \lor [(Q \lor \neg R) \land R)]]] & \text{(distributivity)} \\
+	\equiv & \neg[(P \lor Q) \lor [[(Q \land P) \lor (\neg R \land P)] \lor [(Q \land R) \lor (\neg R \land R)]]] & \text{(distributivity)} \\
+	\equiv & \neg[(P \lor Q) \lor [[(Q \land P) \lor (\neg R \land P)] \lor [(Q \land R) \lor \mathds{F}]]] & \text{(complement)} \\
+	\equiv & \neg[P \lor Q \lor (Q \land P) \lor (\neg R \land P) \lor (Q \land R)] & \text{(associativity, identity)} \\
+	\equiv & \neg[P \lor Q \lor (\neg R \land P) \lor (Q \land R)] & \text{(absorption)} \\
+	\equiv & \neg[P \lor (\neg R \land P) \lor Q \lor (Q \land R)] & \text{(commutativity)} \\ 
+	\equiv & \neg(P \lor Q) & \text{(absorption)} \\ 
+	\equiv & \neg P \land \neg Q & \text{(DeMorgan's law)} \\
+	&&\qed
+\end{array}
+\)
+
+\begin{problem}
+Of the following conditional and biconditional statements, which are true and which are false?
+Briefly justify your answers.
+\end{problem}
+
+\begin{enumerate}[(a)]
+\item $\pi$ is an integer if and only if $\sqrt{e + 3}$ is a vowel.
+\end{enumerate}
+
+\begin{solution}
+\end{solution}
+
+P: $\pi$ is an integer,  P \(\equiv \mathds{F}\) \par
+Q: $\sqrt{e + 3}$ is a vowel, Q \(\equiv \mathds{F}\)
+
+Symbolization of (a) : \(P \Leftrightarrow Q \equiv \mathds{F} \Leftrightarrow \mathds{F} \equiv \mathds{T} \) \par
+The statement is true.
+
+\begin{enumerate}[(b)]
+\item 0 $>$ 1 whenever 2 + 2 = 4.
+\end{enumerate}
+
+P: 0 $>$ 1,  P \(\equiv \mathds{F}\) \par
+Q: 2 + 2 = 4, Q \(\equiv \mathds{T}\)
+
+Symbolization of (b): \(Q \Rightarrow P \equiv \mathds{T} \Rightarrow \mathds{F} \equiv \mathds{F} \) \par
+The statement is false.
+
+\begin{enumerate}[(c)]
+\item If (a) implies (b), then pigs cannot fly.
+\end{enumerate}
+
+P: (a) implies (b),  P \(\equiv (a) \Rightarrow (b) \equiv  \mathds{T} \Rightarrow \mathds{F} \equiv  \mathds{F} \) \par
+Q: Pigs cannot fly, Q \(\equiv \mathds{T}\)
+
+Symbolization of (c): \([(a) \Rightarrow (b)] \Rightarrow Q \equiv \mathds{F} \Rightarrow \mathds{T} \equiv \mathds{T} \) \par
+The statement is true.
+
+\begin{problem}
+Symbolize the following English sentences in logic, using the abbreviation scheme provided.
+\end{problem}
+
+\begin{enumerate}[(a)]
+\item \text{"Thunder only happens when it's raining."}
+\end{enumerate}
+\text{T : thunder happens} \\
+\text{R : it's raining} \\
+Symbolization of (a): \( T \Rightarrow R \)
+
+\begin{enumerate}[(b)]
+\item "For every positive integer n there is a prime number that is bigger than n but at most 2n."
+\end{enumerate}
+\text{I(x) : x is a positive integer} \\
+\text{P(x) : x is a prime number} \\
+\text{B(x, y) : x is bigger than y} \\
+Symbolization of (b): \( \forall n [I(n) \Rightarrow \exists x (P(x) \land B(x,n) \land B(2n+1, x ))]  \)
+
+\begin{enumerate}[(c)]
+\item "Goldbach's Conjecture is true if every even integer greater than 2 can be written as the sum of two primes."
+\end{enumerate}
+\text{G : Goldbach's Conjecture is true} \\
+\text{E(x) : x is an even integer} \\
+\text{T(x) : x is greater than 2} \\
+\text{P(x) : x is the sum of two primes} \\
+Symbolization of (c): \( \forall x ( E(x) \land T(x) \land P(x)) \Rightarrow G \)
+
+
+
+
+\end{document}

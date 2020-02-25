@@ -1,0 +1,12 @@
+
+public class Savings extends Account {
+
+	Savings(double amount) {
+		super(amount);
+	}
+	
+	public String toString() {
+		return "Savings";
+	}
+
+}

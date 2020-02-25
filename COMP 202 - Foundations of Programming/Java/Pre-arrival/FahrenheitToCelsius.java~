@@ -1,0 +1,7 @@
+public class FahrenheitToCelsius{
+  public static void main(String[] args){
+    String stringtemp = args[0];
+    int temp = Integer.parseInt(stringtemp);
+    System.out.println("The temperature is " + temp + "°C.");
+  }
+}

@@ -1,0 +1,46 @@
+package JavaCool303;
+import java.awt.Component;
+import java.util.ArrayList;
+
+import javax.swing.JPanel;
+
+public class Cool303Panel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	protected ArrayList<Component> components = new ArrayList<Component>();
+	
+	public Cool303Panel() {
+	}
+	
+	// Si on change le theme -> recolorer
+	public Component add(Component comp) {
+		components.add(comp);
+		return super.add(comp);
+	}
+	
+	public Component add(String name, Component comp) {
+		components.add(comp);
+		return super.add(name, comp);
+	}
+	
+	public Component add(Component comp, int index) {
+		components.add(comp);
+		return super.add(comp, index);
+	}
+	
+	public void remove(int index) {
+		Component c = getComponent(index);
+		components.remove(c);
+		super.remove(index);
+	}
+	
+	public void remove(Component comp) {
+		components.remove(comp);
+		super.remove(comp);
+	}
+	
+	public void removeAll() {
+		components.clear();
+		super.removeAll();
+	}
+}

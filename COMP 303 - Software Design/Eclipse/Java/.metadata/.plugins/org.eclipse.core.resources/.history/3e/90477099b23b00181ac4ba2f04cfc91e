@@ -1,0 +1,5 @@
+package JavaCool303;
+
+public interface Cool303Container {
+
+}

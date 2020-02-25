@@ -1,0 +1,116 @@
+package JavaCool303;
+
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.Dimension;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.Component;
+import java.util.ArrayList;
+
+public class Cool303Container implements Cool303Component {
+    private JPanel panel, content;
+    private boolean enableBgColor = false;
+    private int width, height;
+
+    private ArrayList<Cool303Component> components = new ArrayList<>();
+
+    public Cool303Container() {
+        panel = new JPanel(new FlowLayout());
+        content = panel;
+
+        setSize(325, 325);
+    }
+
+    public Cool303Container(String title) throws IllegalArgumentException {
+        if (title == null || title.isEmpty())
+            throw new IllegalArgumentException("Title can't be blank.");
+
+        panel = new JPanel(new BorderLayout());
+
+        content = new JPanel(new FlowLayout());
+
+        panel.add(new JLabel(title, (int)JLabel.CENTER_ALIGNMENT), BorderLayout.NORTH);
+        panel.add(content, BorderLayout.CENTER);
+
+        setSize(325, 325);
+    }
+
+    public Cool303Container(int width, int height){
+        this();
+
+        if (width <= 0 || height <= 0)
+            throw new IllegalArgumentException("Put in a real dimension.");
+
+        setSize(width, height);
+    }
+
+    public Cool303Container(String title, int width, int height){
+        this(title);
+
+        if (width <= 0 || height <= 0)
+            throw new IllegalArgumentException("Put in a real dimension.");
+
+        setSize(width, height);
+    }
+
+    public void enableBgColor(boolean bool) { enableBgColor = bool; }
+
+    public void add(Cool303Component c) {
+        if (c == null)
+            throw new IllegalArgumentException("Can't add null.");
+
+        components.add(c);
+
+        content.add( c.getComponent() );
+    }
+
+    public void remove(int i) throws IllegalArgumentException {
+        if (i < 0 || i >= components.size())
+            throw new IllegalArgumentException("Index out of bounds.");
+
+        content.remove(components.get(i).getComponent());
+
+        components.remove(i);
+    }
+
+    public void removeAll() {
+        content.removeAll();
+
+        components.clear();
+    }
+
+    ArrayList<Cool303Component> getChildren() {
+        return components;
+    }
+
+    @Override
+    public Component getComponent() {
+        return panel;
+    }
+
+    @Override
+    public void paint(Cool303Theme theme) {
+        if (enableBgColor) {
+            panel.setBackground(theme.getBackgroundColor());
+            content.setBackground(theme.getBackgroundColor());
+        }
+
+        for (Cool303Component c: components) {
+            c.paint(theme);
+        }
+    }
+
+    @Override
+    public void setSize(int width, int height) {
+        panel.setPreferredSize(new Dimension(width, height));
+        this.width = width;
+        this.height = height;
+    }
+
+    @Override
+    public int getWidth() { return width; }
+
+    @Override
+    public int getHeight() { return height; }
+}

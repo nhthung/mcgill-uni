@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+
+public class CatRescue2{
+  private ArrayList<Cat> shelter;
+  private int capacity;
+  
+  public CatRescue2(int capacity){
+     shelter = new ArrayList<Cat>();
+     this.capacity = capacity;
+  }
+  
+  public boolean addCat(Cat cat){
+    if (capacity > 0){
+      shelter.add(cat);
+      capacity--;
+      return true;
+    }
+    return false;
+  }
+  
+  public Cat adopt(){
+    Cat adopted = new Cat("Sage");
+    int oldestCatIndex = 0;
+    for (int i = 0; i < shelter.size(); i++){
+      if (shelter.get(i).getAge() > adopted.getAge()){
+        adopted = shelter.get(i);
+        oldestCatIndex = i;
+      }
+    }
+    shelter.remove(oldestCatIndex);
+    capacity++;
+    return adopted;
+  }
+  
+  public void addCapacity(int change){
+    capacity += change;
+  }
+  
+  public void print(){
+    for(int i = 0; i < shelter.size(); i++){
+      System.out.println(shelter.get(i));
+    }
+  }
+}
+    

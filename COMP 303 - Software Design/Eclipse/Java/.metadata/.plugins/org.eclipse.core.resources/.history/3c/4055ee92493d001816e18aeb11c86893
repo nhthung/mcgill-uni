@@ -1,0 +1,43 @@
+package JavaCool303;
+
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+
+public class test {
+	public static void main(String[] args) {
+		JFrame frame = new JFrame("Big treats for good dogs!");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frame.setSize(new Dimension(65*5, 300));
+		frame.setSize(new Dimension(1000, 1000));
+		frame.setLayout(new FlowLayout());
+		
+		Cool303Root root = new Cool303Root();
+		Cool303Container container = new Cool303Container("Coachella was good we had a lot of gay sex");
+		container.enableBgColor(true);
+		
+		Cool303Container container2 = new Cool303Container();
+		container2.enableBgColor(true);
+		
+		for(int i = 1; i <= 20; i++) {
+			container.add(new Cool303Button(Integer.toString(i)));
+			container2.add(new Cool303Button(Integer.toString(i+1)));
+		}
+		
+		Cool303Root root2 = new Cool303Root();
+		Cool303Container container3 = new Cool303Container("fack me");
+		
+		System.out.println(container.getHeight());
+		
+		root.add(container);
+		root.add(container2);
+		
+		root.applyTheme(new PastelTheme());
+		
+		frame.add(root);
+		
+		frame.setVisible(true);
+	}
+}

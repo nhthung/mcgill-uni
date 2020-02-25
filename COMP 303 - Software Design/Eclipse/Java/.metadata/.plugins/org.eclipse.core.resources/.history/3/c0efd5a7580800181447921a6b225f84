@@ -1,0 +1,16 @@
+
+public class Savings extends Account {
+
+	Savings(double amount) {
+		super(amount);
+	}
+	
+	String info() {
+		return "Savings balance: " + getBalance() + " garlicoins";
+	}
+	
+	public String toString() {
+		return "Savings";
+	}
+
+}

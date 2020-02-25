@@ -1,0 +1,48 @@
+package JavaCool303;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.util.ArrayList;
+import javax.swing.JComponent;
+import javax.swing.border.Border;
+
+public class Cool303Root extends Cool303Panel {
+	private static final long serialVersionUID = 1L;
+	ArrayList<JComponent> components = new ArrayList<JComponent>();
+	
+	Cool303Theme theme;
+	Color color;
+	Color bgColor;
+	Border border;
+	
+	public Cool303Root(Cool303Theme theme) {
+		this.theme = theme;
+		color = theme.getColor();
+		bgColor = theme.getBackgroundColor();
+		border = theme.getBorder();
+	}
+	
+	public Component add(Component comp) {
+		super.add(comp);
+	}
+	
+	public Component add(String name, Component comp) {
+		super.add(name, comp);
+	}
+	
+	public Component add(Component comp, int index) {
+		super.add(comp, index);
+	}
+	
+	Cool303Theme getTheme() {
+		return theme;
+	}
+	
+	protected void paintComponent(Graphics g) {
+		paintChildren(g);
+		/*for (iterable_type iterable_element : iterable) {
+			
+		}*/
+	}
+}

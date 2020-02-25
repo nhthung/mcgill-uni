@@ -1,0 +1,14 @@
+package JavaCool303;
+import java.awt.Component;
+import java.util.ArrayList;
+
+import javax.swing.JPanel;
+
+public class Cool303Panel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	protected ArrayList<Component> components = new ArrayList<Component>();
+	
+	public Cool303Panel() {
+	}
+}

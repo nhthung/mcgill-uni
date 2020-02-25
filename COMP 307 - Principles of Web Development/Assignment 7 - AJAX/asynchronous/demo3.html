@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asynchronous Demo</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var form1 = $('#Form1');
+            form1.submit( function (ev) {
+                ev.preventDefault();
+                $.ajax({
+                    type: form1.attr('method'),
+                    url: form1.attr('action'),
+                    data: form1.serialize(),
+                    success:function(response){
+                        document.getElementById('divForm1').innerText=response;
+
+                    },
+                    error:function(xhr, desc, err)
+                    {
+                        var err = eval("(" + xhr.responseText + ")");
+                        console.log('err:'+err);
+                        xhr.abort();
+                    }
+                });
+            });
+
+            var form2 = $('#Form2');
+            form2.submit( function (ev) {
+                ev.preventDefault();
+                $.ajax({
+                    type: form2.attr('method'),
+                    url: form2.attr('action'),
+                    data: form2.serialize(),
+                    success: function(response){
+                        document.getElementById('divForm2').innerText=response;
+                        },
+                    error:function(xhr, desc, err){
+                        var err = eval("(" + xhr.responseText + ")");
+                        console.log('err:'+err);
+                        xhr.abort();
+                        }
+                });
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+    <br><br><br><br>
+
+    <div id="divForm1">
+        <form id="Form1" method="post" action="output1.php">
+            First Name: <input id="firstName" name="firstName" type="text" placeholder="Your First Name" required> <br><br>
+            Last Name: <input id="lastName" name="lastName" type="text" placeholder="Your Last Name" required> <br><br>
+            <button id="submit1" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <br><br><br><br>
+
+    <div>
+        <p> Just Some Random Content That I Want To Stay Here ALWAYS !!!</p>
+    </div>
+
+    <br><br><br><br>
+
+    <div id="divForm2">
+        <form id="Form2" method="post" action="output2.php">
+            Roll No: <input id="roll" name="roll" type="number" placeholder="Your Roll Number" required><br><br>
+            <button id="submit2" type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

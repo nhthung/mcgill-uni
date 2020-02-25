@@ -1,0 +1,14 @@
+- How we implement methods from Button ? Do we have to implemnt them in the decorator, or can we call them on getInstance, or apple avant passer param
+- extends or decorator
+
+extend
+avantage :
+ - herite de toutes les methodes
+desavantage :
+- doit extend tous les types
+
+decorator
+- pas besoin d'extend tous les types
+- doit reimplementer toutes les methodes
+
+ 

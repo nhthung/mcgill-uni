@@ -1,0 +1,11 @@
+public abstract class Item {
+    private String name;
+    char token;
+    private int x, y;
+
+    public char getToken(){
+        return token;
+    }
+
+    abstract public void step();
+}

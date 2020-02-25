@@ -1,0 +1,13 @@
+Student: Le Nhat Hung
+ID no: 260793376
+September 19, 2017
+
+---
+
+COMP 206 - Mini Assignment 1
+
+---
+
+Question 1: The Linux Manifesto
+
+The Linux Documentation Project (LDP) is a loosely organized team of volunteers that creates and freely distributes online a canonic documentation of the GNU/Linux operating system. Its members strive to create a high-quality, easy to use/search documentation system, and collaborate on all issues concerning said documentation.

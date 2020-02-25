@@ -1,0 +1,280 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{fullpage}
+
+\newlist{myEnumerate}{enumerate}{9}
+\setlist[myEnumerate,1]{label=\textbf{\arabic*.}}
+\setlist[myEnumerate,2]{label=\textbf{(\alph*)}}
+\setlist[myEnumerate,3]{label=\roman*.}
+
+
+\begin{document}
+
+\noindent
+\large\textbf{Assignment 6} \hfill \textbf{LE, Nhat Hung} \\
+\normalsize MATH 240 \hfill \today
+
+\begin{myEnumerate}
+	\item
+	\begin{myEnumerate}
+    	\item
+        $ n = 2: $ \\ \(
+        \begin{array}{ll}
+        	a^{2} - 2a + 2 - 1 & = a^{2} - 2a + 1 \\
+            				   & = (a - 1)^{2}
+        \end{array} \\ \)
+        
+        Assume $\forall n \geq 2$, $(a - 1)^{2} \mid a^{n} - an + n - 1$. \\
+        
+        \(
+        \begin{array}{ll}
+        	a^{n} - an + n - 1 = k(a - 1)^{2} & \Rightarrow a^{n+1} - a^{2}n + an - a = ka(a - 1)^{2}$, $ k \in \mathbb{Z} \\
+											  & \Rightarrow a^{n+1} - an - a + n = ka(a - 1)^{2} + a^{2}n - 2an + n \\
+                                              & \Rightarrow a^{n+1} - a(n + 1) + n = ka(a - 1)^{2} + n(a - 1)^{2} \\
+                                              & \Rightarrow a^{n+1} - a(n + 1) + n = (ka + n)(a - 1)^{2} \\
+                                              & \Rightarrow (a - 1)^{2} \mid a^{n + 1} - a(n + 1) + n \hspace{0.5cm} \square
+        \end{array} \\ \)
+        
+        \item
+        $ n = 1: $
+        $$ \sum_{k=1}^1 \frac{(k+m)!}{(k-1)!} = (1 + m)! $$
+        $$ \frac{(1 + m + 1)!}{(1 - 1)!(m + 2)} = (1 + m)! $$
+        $$ \sum_{k=1}^1 \frac{(k+m)!}{(k-1)!} = \frac{(1 + m + 1)!}{(1 - 1)!(m + 2)} $$
+        
+        Assume $\forall n \geq 1$,
+        $$\sum_{k=1}^n \frac{(k+m)!}{(k-1)!} = \frac{(n + m + 1)!}{(n - 1)!(m + 2)} $$
+        
+        Then,
+        $$ \sum_{k=1}^{n+1} \frac{(k+m)!}{(k-1)!} = \sum_{k=1}^n \frac{(k+m)!}{(k-1)!} + \frac{(n + 1 + m)!}{n!} $$
+        $$ \hspace{2.8cm} = \frac{(n + m + 1)!}{(n - 1)!(m + 2)} + \frac{(n + 1 + m)!}{n!} $$
+        $$ \hspace{5.2cm} = \frac{(n+m+1)!n! + (n+m+1)!(n-1)!(m+2)}{(n-1)!(m+2)n!} $$
+        $$ \hspace{3.4cm} = \frac{(n+m+1)!(n! + (n-1)!(m+2))}{(n-1)!(m+2)n!} $$
+        $$ \hspace{3cm} = \frac{(n+m+1)!(n-1)!(n + m + 2)}{(n-1)!(m+2)n!} $$
+        $$ \hspace{0.5cm} = \frac{(n+m+2)!}{n!(m+2)} \hspace{0.5cm} \square $$
+        
+        \item
+        $ n = 1: $
+        $$ 1 = \sum_{i=1}^1 1 \cdot i! $$
+        
+        Let $m \geq 1$ be given. Assume all $n \leq m$ has such a representation. \\
+        \textbf{Now proving $\mathbf{n = m + 1}$ also has such a representation.}\\
+        
+        Let $k$ largest integer such that
+        $$(1) \hspace{0.5cm} k! \leq m + 1 \leq (k + 1)! $$
+        
+        If $k! = m + 1$, then $m + 1$ has the desired representation.
+        
+        If $k! < m + 1$, let $m'$ such that $k! + m' = m + 1$
+        
+        \( \\
+        \begin{array}{rl}
+        	k! + m' = m + 1   & \Rightarrow m' = m + 1 - k! \\\\
+            1 \leq k! < m + 1 & \Rightarrow -m - 1 < -k! \leq -1 \\
+            				  & \Rightarrow 0 < m + 1 - k! \leq m \\
+                              & \Rightarrow 0 \leq m' \leq m
+        \end{array} \\ \)
+        
+        Thus $m'$ has the desired representation. \\
+        Then, $k! + m' = m + 1$ is a sum of factorials. \\
+        
+        Now checking if $k! + m'$ satisfies $0 \leq c_i < i$. \\
+        
+        If $k!$ is absent from the representation of $m'$, the condition is satisfied. \\
+        
+        If $k!$ is present in the representation of $m'$, we have 2 cases: $c_k \leq k - 1$ and $c_k = k$. \\
+        
+        $\mathbf{c_k \leq k - 1}:$ \\
+        $k! + m' = ... + (c_k + 1)k!$ \\
+        with $c_k + 1 \leq k$, satisfying the condition. \\
+        
+        $\mathbf{c_k = k}:$ \( \\
+        \begin{array}{ll}
+        	m + 1 & = m' + k! \\
+            	  & \geq d_k k! + k! \\
+                  & \geq kk! + k! \\
+                  & \geq (k + 1)!
+        \end{array} \\ \)
+        which contradicts (1). \\
+        This case is thus impossible. \\
+        
+        Therefore, n = m + 1 has the desired representation. \\
+        
+        \textbf{In conclusion,} $\forall n \geq 1,$
+        $$ n = \sum_{i=1}^k c_i i! \hspace{0.5cm} \square $$
+    \end{myEnumerate}
+	
+    \item
+    \begin{myEnumerate}
+    	\item
+        $ n = 1: $ \\ \(
+        \begin{array}{ll}
+        	(-1)^1 f_1 + 1 & = -1 + 1 \\
+            			   & = 0 \\
+                           & = 1 - 1 \\
+                           & = f_1 - f_2
+        \end{array} \\ \)
+        
+        Assume $\forall n \geq 1$, $f_1 - f_2 + f_3 +...+ (-1)^n f_{n+1} = (-1)^n f_n + 1$. \\
+        
+        \(
+        \begin{array}{ll}
+        	f_1 - f_2 + f_3 +...+ (-1)^{n+1}f_{n+2} & = (-1)^n f_n + 1 + (-1)^{n+1}f_{n+2} \\
+            										& = (-1)^n f_n + 1 + (-1)^{n+1}f_n + (-1)^{n+1}f_{n+1} \\
+                                                    & = (-1)^n f_n - (-1)^n f_n + (-1)^{n+1}f_{n+1} + 1 \\
+                                                    & = (-1)^{n+1}f_{n+1} + 1 \hspace{0.5cm} \square
+        \end{array} \)
+        
+        \item
+        $ n = 1: $ \\ \(
+        \begin{array}{ll}
+        	f_1 f_2 & = 1 \\
+            		& = 1^2 \\
+                    & = f_2^2 \\
+        \end{array} \\ \)
+        
+        Assume $\forall n \geq 1$, $f_1 f_2 + f_2 f_3 + f_3 f_4 +...+ f_{2n-1}f_{2n} = f_{2n}^2$. \\
+        
+        \(
+        \begin{array}{ll}
+        	f_1 f_2 + f_2 f_3 + f_3 f_4 +...+ f_{2(n+1) - 1}f_{2(n+1)} & = f_{2n}^2 + f_{2n}f_{2n+1} + f_{2(n+1) - 1}f_{2(n+1)} \\
+            														   & = f_{2n}^2 + f_{2n}f_{2n+1} + f_{2n+1}f_{2n+2} \\
+                                                                       & = f_{2n}^2 + 2f_{2n}f_{2n+1} + f_{2n+1}^2 \\
+                                                                       & = (f_{2n} + f{2n+1})^2 \\
+                                                                       & = f_{2n+2}^2 \\
+                                                                       & = f_{2(n+1)}^2 \hspace{0.5cm} \square
+        \end{array} \)
+        
+    \end{myEnumerate}
+    \item
+    \begin{myEnumerate}
+    	\item
+        $a_m = \frac{3}{2}a_{m-1} - \frac{1}{4}a_{m-2} - 6m$
+        
+        \item
+        Let $p_m = am + b$ \\ \( \\
+        \begin{array}{rl}
+        	am + b & =  \frac{3}{2} \Big( a(m-1)+b \Big) -\frac{1}{4} \Big( a(m-2)+b \Big) - 6m \\
+            	   & =  \frac{3}{2}am -\frac{3}{2}a + \frac{3}{2}b - \frac{1}{4}am + \frac{1}{2}a - \frac{1}{4}b - 6m \\
+                 0 & = \frac{1}{4}am - 6m - a + \frac{1}{4}b \\
+                   & = -a + \frac{1}{4}b + \Big( \frac{1}{4}a - 6 \Big)m
+        \end{array} \\ \)
+        
+        \( \\
+        \begin{array}{ll}
+        	\left\{
+    			\begin{array}{ll}
+        			-a + \frac{1}{4}b = 0 \\
+        			\frac{1}{4}a - 6 = 0
+    			\end{array}
+			\right.
+        	& \Rightarrow
+            \left\{
+    			\begin{array}{ll}
+        			b = 96 \\
+        			a = 24
+    			\end{array}
+			\right. \\
+            
+            & \Rightarrow p_m = 24m + 96
+        \end{array} \\ \)
+        
+        Now solving $a_m = \frac{3}{2}a_{m-1} - \frac{1}{4}a_{m-2} $ \\ \( \\
+        \begin{array}{ll}
+        	x^2 - \frac{3}{2}x + \frac{1}{4} & = \Big( x - \frac{3}{4} \Big)^2 - \frac{5}{16} \\
+											 & = \Big( x - \frac{3+\sqrt{5}}{4} \Big) \Big(x - \frac{3-\sqrt{5}}{4} \Big)
+        \end{array} \\ \)
+        
+        Let $q_m = c_1 \Big( \frac{3+\sqrt{5}}{4} \Big)^m + c_2 \Big( \frac{3-\sqrt{5}}{4} \Big)^m$ \\
+        
+        Then,
+        $$ a_m = p_n + q_n $$
+        $$ = 24m + 96 + c_1 \Big( \frac{3+\sqrt{5}}{4} \Big)^m + c_2 \Big( \frac{3-\sqrt{5}}{4} \Big)^m $$
+        
+        \( \\
+        \begin{array}{ll}
+        	\left\{
+    			\begin{array}{ll}
+        			a_0 = 40 \\
+        			a_1 = 54
+    			\end{array}
+			\right.
+        	& \Rightarrow
+            \left\{
+    			\begin{array}{ll}
+        			40 = 96 + c_1 + c_2 \\
+        			54 = 24 + 96 + c_1 \Big( \frac{3+\sqrt{5}}{4} \Big) + c_2 \Big( \frac{3-\sqrt{5}}{4} \Big)
+    			\end{array}
+			\right. \\
+            
+            & \Rightarrow
+            \left\{
+    			\begin{array}{ll}
+        			c_1 + c_2 = -56 \\
+        			c_1 \Big( \frac{3+\sqrt{5}}{4} \Big) + c_2 \Big( \frac{3-\sqrt{5}}{4} \Big) = -66
+    			\end{array}
+			\right. \\
+            
+            & \Rightarrow
+            \left\{
+    			\begin{array}{ll}
+        			c_1 = -c_2 - 56 \\
+        			-c_2 \Big( \frac{3+\sqrt{5}}{4} \Big) - 56 \Big( \frac{3+\sqrt{5}}{4} \Big) + c_2 \Big( \frac{3-\sqrt{5}}{4} \Big) = -66
+    			\end{array}
+			\right. \\
+            
+            & \Rightarrow
+            \left\{
+    			\begin{array}{ll}
+        			c_1 = -c_2 - 56 \\
+        			-\frac{\sqrt{5}}{2}c_2 - 42 - 14\sqrt{5} = -66
+    			\end{array}
+			\right. \\
+            
+            & \Rightarrow
+            \left\{
+    			\begin{array}{ll}
+        			c_1 = \frac{-48\sqrt{5} - 140}{5} \\
+        			c_2 = \frac{48\sqrt{5} - 140}{5}
+    			\end{array}
+			\right. \\
+        \end{array} \\ \)
+        
+        Thus,
+        $$ a_m = 24m + 96 + c_1 \Big( \frac{3+\sqrt{5}}{4} \Big)^m + c_2 \Big( \frac{3-\sqrt{5}}{4} \Big)^m $$
+        $$ = 24m + 96 - \frac{140 + 48\sqrt{5}}{5} \Big( \frac{3+\sqrt{5}}{4} \Big)^m - \frac{140 - 48\sqrt{5}}{5} \Big( \frac{3-\sqrt{5}}{4} \Big)^m $$
+        
+        \item Now proving $\frac{da_m}{dm} < 0$ for $m \geq 3$
+        $$ \frac{da_m}{dm} = 24 - \frac{140 + 48\sqrt{5}}{5} ln \Big( \frac{3+\sqrt{5}}{4} \Big) \Big( \frac{3+\sqrt{5}}{4} \Big)^m - \frac{140 - 48\sqrt{5}}{5} ln \Big( \frac{3-\sqrt{5}}{4} \Big) \Big( \frac{3-\sqrt{5}}{4} \Big)^m$$
+        $$ \lim_{m \to \infty} \frac{140 + 48\sqrt{5}}{5} ln \Big( \frac{3+\sqrt{5}}{4} \Big) \Big( \frac{3+\sqrt{5}}{4} \Big)^m = \infty $$
+        $$ \lim_{m \to \infty} \frac{140 - 48\sqrt{5}}{5} ln \Big( \frac{3-\sqrt{5}}{4} \Big) \Big( \frac{3-\sqrt{5}}{4} \Big)^m = 0 $$
+        
+        Thus,
+        $$ \lim_{m \to \infty} \frac{140 + 48\sqrt{5}}{5} ln \Big( \frac{3+\sqrt{5}}{4} \Big) \Big( \frac{3+\sqrt{5}}{4} \Big)^m + \frac{140 - 48\sqrt{5}}{5} ln \Big( \frac{3-\sqrt{5}}{4} \Big) \Big( \frac{3-\sqrt{5}}{4} \Big)^m = \infty $$
+        $$ \lim_{m \to \infty} 24 - \frac{140 + 48\sqrt{5}}{5} ln \Big( \frac{3+\sqrt{5}}{4} \Big) \Big( \frac{3+\sqrt{5}}{4} \Big)^m - \frac{140 - 48\sqrt{5}}{5} ln \Big( \frac{3-\sqrt{5}}{4} \Big) \Big( \frac{3-\sqrt{5}}{4} \Big)^m = - \infty $$
+        $$ \lim_{m \to \infty} \frac{da_m}{dm} = - \infty $$
+        
+        Let $f'(m) = \frac{da_m}{dm}$ \\
+        
+        \(
+        \begin{array}{ll}
+        	f'(3) & \approx -5.8 \\
+            	  & < 0
+        \end{array} \\ \)
+        
+        Thus, $\forall m \geq 3, \frac{da_m}{dm} < 0 \hspace{0.5cm} \square$ \\
+        
+        This means after 3 minutes, the prize money $a_m$ only decreases. \\        
+        Checking $a_0, a_1, a_2$ and $a_3$: \\
+        $a_0 = 40$ \\
+        $a_1 = 54$ \\
+        $a_2 = 59$ \\
+        $a_3 = 57$ \\
+        
+        Thus, leaving the chair after 2 minutes maximizes the winnings.
+        
+    \end{myEnumerate}
+
+\end{myEnumerate}
+
+\end{document}
