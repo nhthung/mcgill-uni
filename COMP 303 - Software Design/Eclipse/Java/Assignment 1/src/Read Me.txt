@@ -1,1 +1,0 @@
-Please grade the assignment using Atom as the text viewer.

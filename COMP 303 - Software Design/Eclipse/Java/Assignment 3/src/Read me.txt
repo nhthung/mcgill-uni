@@ -1,8 +1,0 @@
-Please view .java files in Atom.
-
-Only one JUnit class was made, as pinMain only holds the main method.
-
-No runner class was made, as JUnit can be run in Eclipse.
-
-Love,
-Hung

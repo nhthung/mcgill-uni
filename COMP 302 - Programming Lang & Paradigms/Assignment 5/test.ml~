@@ -1,3 +1,0 @@
-let (k: int) = 4;;
-let (k: int) = 3 in k*k;;
-k;;

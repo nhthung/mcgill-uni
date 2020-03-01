@@ -1,6 +1,0 @@
-public class HowManyBits{
-  public static void main(String[] args){
-    int Nbvalues = args[0];
-    System.out.println(Math.ceil(Math.log(Nbvalues)/Math.log(2)));
-  }
-}

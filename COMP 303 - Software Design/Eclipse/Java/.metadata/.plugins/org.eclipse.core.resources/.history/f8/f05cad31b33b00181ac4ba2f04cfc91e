@@ -1,7 +1,0 @@
-package JavaCool303;
-
-import java.awt.Component;
-
-public interface Cool303Container {
-	Component getComponents();
-}

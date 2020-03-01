@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"JavaCool303"},{"l":"JavaCool303.Themes"}]

@@ -1,7 +1,0 @@
-INDEX VERSION 1.130+C:\Users\Mr Brownstone\Documents\Work\School\McGill University\COMP 250\Eclipse\Java\.metadata\.plugins\org.eclipse.jdt.core
-2360426812.index
-565767664.index
-1708319753.index
-1392768195.index
-364384390.index
-3113873269.index

@@ -1,1 +1,0 @@
-Again, please view code in Atom instead of Eclipse.

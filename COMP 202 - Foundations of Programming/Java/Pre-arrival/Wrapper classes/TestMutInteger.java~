@@ -1,5 +1,0 @@
-public class TestMutInteger{
-  public static void main(String[] args){
-    MutInteger integer = new MutInteger(5);
-  }
-}

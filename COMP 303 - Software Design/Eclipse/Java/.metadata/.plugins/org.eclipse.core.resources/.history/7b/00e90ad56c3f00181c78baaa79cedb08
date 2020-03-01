@@ -1,8 +1,0 @@
-public class Main {
-    public static void main(){
-        int[][] array = new int[2][3];
-
-        System.out.println(array.length);
-        System.out.println(array[0].length);
-    }
-}
