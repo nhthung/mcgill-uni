@@ -1,0 +1,3 @@
+[submodule "COMP 597 - Machine Learning Applications in Real-World Systems/Project - Taxi Carpool MARL/taxi-marl"]
+	path = COMP 597 - Machine Learning Applications in Real-World Systems/Project - Taxi Carpool MARL/taxi-marl
+	url = https://github.com/nhthung/taxi-marl
