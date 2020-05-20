@@ -1,0 +1,4 @@
+tqdm==4.37.0
+numpy==1.14.3
+biopython==1.74
+gffutils==0.9
