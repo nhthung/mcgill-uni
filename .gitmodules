@@ -1,0 +1,15 @@
+[submodule "COMP 307 - Principles of Web Development/Project/Basketball/code"]
+	path = COMP 307 - Principles of Web Development/Project/Basketball/code
+	url = https://github.com/nhthung/Basketball
+[submodule "COMP 551 - Applied Machine Learning/Project 3/code"]
+	path = COMP 551 - Applied Machine Learning/Project 3/code
+	url = https://github.com/nhthung/modified-mnist
+[submodule "COMP 551 - Applied Machine Learning/Project 4/code"]
+	path = COMP 551 - Applied Machine Learning/Project 4/code
+	url = https://github.com/nhthung/reproducible-ml
+[submodule "COMP 597 - Machine Learning Applications in Real-World Systems/Project - Taxi Carpool MARL/code"]
+	path = COMP 597 - Machine Learning Applications in Real-World Systems/Project - Taxi Carpool MARL/code
+	url = https://github.com/nhthung/taxi-marl
+[submodule "COMP 561 - Computational Biology Methods and Research/Project/code"]
+	path = COMP 561 - Computational Biology Methods and Research/Project/code
+	url = https://github.com/nhthung/prob-blast
