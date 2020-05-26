@@ -13,3 +13,36 @@
 [submodule "COMP 561 - Computational Biology Methods and Research/Project/code"]
 	path = COMP 561 - Computational Biology Methods and Research/Project/code
 	url = https://github.com/nhthung/prob-blast
+[submodule "COMP 424 - Artificial Intelligence/Project/code"]
+	path = COMP 424 - Artificial Intelligence/Project/code
+	url = https://github.com/nhthung/pentago-swap
+[submodule "COMP 424 - Artificial Intelligence/Assignment 1/code"]
+	path = COMP 424 - Artificial Intelligence/Assignment 1/code
+	url = https://github.com/nhthung/Artifical-Intelligence-Local-Search-Algorithms
+[submodule "COMP 546 - Computational Perception/Assignment 1/code"]
+	path = COMP 546 - Computational Perception/Assignment 1/code
+	url = https://github.com/nhthung/Computer-Vision-RGB-Local-Contrast-and-Difference-of-Gaussians
+[submodule "COMP 546 - Computational Perception/Assignment 2/code"]
+	path = COMP 546 - Computational Perception/Assignment 2/code
+	url = https://github.com/nhthung/gabor-functions
+[submodule "COMP 546 - Computational Perception/Assignment 3/code"]
+	path = COMP 546 - Computational Perception/Assignment 3/code
+	url = https://github.com/nhthung/fourier-transform
+[submodule "COMP 551 - Applied Machine Learning/Project 2/code"]
+	path = COMP 551 - Applied Machine Learning/Project 2/code
+	url = https://github.com/nhthung/IMDB-Sentiment-Classification
+[submodule "COMP 551 - Applied Machine Learning/Project 1/code"]
+	path = COMP 551 - Applied Machine Learning/Project 1/code
+	url = https://github.com/nhthung/Reddit-Popularity-Predictor
+[submodule "COMP 561 - Computational Biology Methods and Research/Assignment 3/code"]
+	path = COMP 561 - Computational Biology Methods and Research/Assignment 3/code
+	url = https://github.com/nhthung/gene-predict-viterbi
+[submodule "COMP 561 - Computational Biology Methods and Research/Assignment 1/code"]
+	path = COMP 561 - Computational Biology Methods and Research/Assignment 1/code
+	url = https://github.com/nhthung/gene-align
+[submodule "COMP 596 - Brain Inspired Artificial Intelligence/Assignment 1 - Boltzmann Machine/code"]
+	path = COMP 596 - Brain Inspired Artificial Intelligence/Assignment 1 - Boltzmann Machine/code
+	url = https://github.com/nhthung/boltzmann-machine
+[submodule "COMP 596 - Brain Inspired Artificial Intelligence/Assignment 2 - Temporal Difference Learning/code"]
+	path = COMP 596 - Brain Inspired Artificial Intelligence/Assignment 2 - Temporal Difference Learning/code
+	url = https://github.com/nhthung/td-learning

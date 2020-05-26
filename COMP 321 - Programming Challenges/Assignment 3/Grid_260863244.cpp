@@ -30,7 +30,7 @@ void search(int x,int y){
 		//check for available move in all four directions
 		//invalid move when it gets out of the board or when it is already visited
 		if(t.first+(arr[t.first][t.second]-'0') >= 0 && t.second >= 0 && t.first+(arr[t.first][t.second]-'0') < n && t.second < m && !visit[t.first+(arr[t.first][t.second]-'0')][t.second]){
-			q.push({t.first+(arr[t.first][t.second]-'0'),t.second});
+			q.push({t.first+(arr[t.first][t.second]-'0'), t.second});
 
 			//change to 1 when we decide to visit
 			visit[t.first+(arr[t.first][t.second]-'0')][t.second]=1;

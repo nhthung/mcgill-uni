@@ -1,0 +1,5 @@
+Christopher Olah:
+Backpropagration: http://colah.github.io/posts/2015-08-Backprop/
+Conv Nets: http://colah.github.io/posts/2014-07-Conv-Nets-Modular/
+Understanding Convolutions: http://colah.github.io/posts/2014-07-Understanding-Convolutions/
+Understanding LSTM Networks: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
