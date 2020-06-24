@@ -1,0 +1,17 @@
+# Ignore everything in the root
+/*
+# Un-ignore all of subtree
+!/AERO/
+!/Archive/
+!/CHEE 390/
+!/COMP 321 - Programming Challenges/
+!/COMP 551 - Applied Machine Learning/
+!/COMP 561 - Computational Biology Methods and Research/
+!/COMP 596 - Brain Inspired Artificial Intelligence/
+!/COMP 597 - Machine Learning Applications in Real-World Systems/
+!/MGCR 423 - Strategic Management/
+!/MGCR 472 - Operations Management/
+!/Compete McGill/
+!/International Student Services/
+!/Schedule/
+!.gitignore

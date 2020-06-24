@@ -4,26 +4,29 @@
 
 using namespace std;
 
+int n, i, u, v, root;
+
 int main(){
-    /**
-     * Find longest path length
-     */
     ios::sync_with_stdio(0);
     cin.tie(0);
-
-    int n, i, j, len, longest=1;
+    
     cin >> n;
-    int g[n+1];
+    vector<int> adj[n+1];
+    for(i=0; i<n-1; ++i){
+        cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
 
-    for(i=1; i<=n; ++i) cin >> g[i];
-    for(i=1; i<=n; ++i){
-        len=1;
-        j=i;
-        while(g[j]!=-1){
-            j=g[j];
-            len++;
+        if(adj[u].size()==3 || adj[v].size()==3){
+            if(root){ cout << "No\n"; return 0; }
+            root=adj[u].size()==3 ? u : v;
         }
-        longest=max(longest, len);
     }
-    cout << longest << "\n";
+    cout << "Yes\n";
+    cout << (root ? adj[root].size() : 1) << "\n";
+    for(i=1; i<=n; ++i){
+        if(adj[i].size()>1) continue;
+        if(root) cout << root << " " << i << "\n";
+        else     cout << i << " ";
+    }
 }
