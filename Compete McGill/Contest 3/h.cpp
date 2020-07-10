@@ -6,14 +6,13 @@ const int N=100001;
 int n, p, k, leaves[N];
 vector<int> ans, adj[N];
 
-void dfs(int u, int parent=0){
-    if(u>1 && adj[u].size()==1){
+void dfs(int u){
+    if(u>1 && adj[u].size()==0){
         leaves[u]=1;
         return;
     }
     for(int v: adj[u]){
-        if(v==parent) continue;
-        dfs(v, u);
+        dfs(v);
         leaves[u]+=leaves[v];
     }
     ans.push_back(leaves[u]);
@@ -33,14 +32,14 @@ int main(){
 
     int n_leaves=n;
     for(int i=2; cin >> p; ++i){
-        adj[i].push_back(p);
         adj[p].push_back(i);
-        if(adj[i].size()==2 || adj[p].size()==2) --n_leaves;
+        if(adj[p].size()==1) --n_leaves;
     }
-    if(adj[1].size()==1) --n_leaves; 
+    if(adj[1].size()==0) --n_leaves;
+
 
     for(k=1; k<=n_leaves; ++k) cout << "1 ";
     dfs(1);
     sort(ans.begin(), ans.end());
-    for(auto x: ans) cout << x << " ";
+    for(auto x: ans) cout << x << " "; cout << '\n';
 }
